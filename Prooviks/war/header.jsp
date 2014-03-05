@@ -18,7 +18,7 @@
 	    	pageContext.setAttribute("user", user);
 	 %>
 	 	<ul>
-	 		<li>Hello, ${fn:escapeXml(user.nickname)}!</li>
+	 		<li><p>Hello, ${fn:escapeXml(user.nickname)}!</p></li>
 	 		<li><a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">SIGN OUT</a></li>
 		</ul>
 	<%
@@ -26,7 +26,6 @@
 	%>
 	 	<ul>
 	 		<li><a href="<%= userService.createLoginURL(request.getRequestURI()) %>">LOGI SISSE</a></li>
-	 		<li><a href="#">REGISTREERI</a></li>
 	 	</ul>
 	<%
 	    }

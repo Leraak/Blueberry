@@ -11,12 +11,12 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="stylesheets/StyleSheet.css"/>
-        <style>
-        </style>
-        <script type="text/javascript"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-        <script src="js/popBox/popbox.min.js" type="text/javascript"></script>
-        <link href="js/popBox/popbox.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <link rel="stylesheet" href="js/fancyBox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+		<script type="text/javascript" src="js/fancyBox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+		<script type="text/javascript" src="js/fancybox_proov.js"></script>
+		
+        
         <title>BEST NEWS EU</title>
     </head>
     <body>
@@ -45,10 +45,36 @@
         </div>
 
         <div id="widgets" class="disain">
-            <h2>Kell vms</h2>
-            <h2>Lemmikud</h2>
-            <h2>Tellimine</h2>
-            <h2>Kalender</h2>
+            <%
+			    UserService userService = UserServiceFactory.getUserService();
+			    User user = userService.getCurrentUser();
+			    if (user != null) {
+			    	pageContext.setAttribute("user", user);
+				    if (userService.isUserAdmin()) {
+					 %>
+					 <ul>
+					 	<li><a href="#">LISA UUDIS</a></li>
+					 	<li><a href="#">MUUDA KASUTAJA SEADEID</a></li>
+					 	<li><a href="#">LEMMIKUD</a></li>
+					 	<li><a class="various" data-fancybox-type="iframe" href="http://www.postimees.ee">TELLIMINE</a></li>
+					 </ul>
+					 <%
+				    	} else {
+					 %>
+					 <ul>
+					 	<li><a href="#">LEMMIKUD</a></li>
+					 	<li><a href="#">TELLIMINE</a></li>
+					 </ul>
+					 <%
+			    	}
+				} else {
+			 %>
+			 <ul>
+			 	<li><a>Sinu jaoks ei ole siin midagi</a></li>
+			 </ul>
+			 <%
+			    }
+			 %>
         </div>
     </body>
 </html>

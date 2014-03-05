@@ -2,6 +2,11 @@
 body {
     background-color: #2E3135;
 }
+
+/*
+HEADER
+*/
+
 #header {
     position: fixed;
     height: 50px;
@@ -30,6 +35,11 @@ body {
 	color: #fff;
 	display: inline-block;
 }
+
+/*
+LOGIMINE
+*/
+
 #logimine {
 	margin-right: 10%;
 	float: right;
@@ -43,6 +53,9 @@ body {
 #logimine ul li {
 	float: left;
 	display: inline;
+}
+#logimine, ul li p {
+	color: white;
 }
 #logimine ul li a {
 	display: block;
@@ -82,6 +95,11 @@ background-color: #036;
     background-color: #E5EBDF;
     border: 1px solid black;
 }
+
+/*
+WIDGETID
+*/
+
 #widgets {
     text-align: center;
     position: fixed;
@@ -90,10 +108,22 @@ background-color: #036;
     height: 400px;
     width: 20%;
 }
-#login {
-	float: right;
-	margin-right: 10%;
+#widgets ul {
+	margin: 10%;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
 }
+#widgets ul li {
+	margin-bottom: 5px;
+    background-color: #E5EBDF;
+    border: 1px solid black;
+}
+#widgets ul li a {
+	text-decoration: none;
+	color: black;
+}
+
 .disain {
     background-color: #369;
     border:solid 1px #F8EED3;
