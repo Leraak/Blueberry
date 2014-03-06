@@ -33,6 +33,10 @@
             </div>
             <div id="otsing">
             	<h2>Otsing</h2>
+            	<form>
+            		<input type="text">
+            		<button type="button">OTSI</button>
+            	</form>
             </div>
         </div>
 
@@ -56,21 +60,21 @@
 					 	<li><a href="#">LISA UUDIS</a></li>
 					 	<li><a href="#">MUUDA KASUTAJA SEADEID</a></li>
 					 	<li><a href="#">LEMMIKUD</a></li>
-					 	<li><a class="various" data-fancybox-type="iframe" href="http://www.postimees.ee">TELLIMINE</a></li>
+					 	<li><a class="various" data-fancybox-type="iframe" title="TELLIMINE" href="/telli.jsp">TELLIMINE</a></li>
 					 </ul>
 					 <%
 				    	} else {
 					 %>
 					 <ul>
 					 	<li><a href="#">LEMMIKUD</a></li>
-					 	<li><a href="#">TELLIMINE</a></li>
+					 	<li><a class="various" data-fancybox-type="iframe" title="TELLIMINE" href="/telli.jsp">TELLIMINE</a></li>
 					 </ul>
 					 <%
 			    	}
 				} else {
 			 %>
 			 <ul>
-			 	<li><a>Sinu jaoks ei ole siin midagi</a></li>
+			 	<li><a>Logi sisse et saada ligipääs uskumatutele võimalustele</a></li>
 			 </ul>
 			 <%
 			    }

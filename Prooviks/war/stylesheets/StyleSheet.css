@@ -1,6 +1,8 @@
 @CHARSET "UTF-8";
 body {
-    background-color: #2E3135;
+    /*background-color: #2E3135;*/
+    background-image:url("/taustamustrid/grey_wash_wall.png");
+	background-repeat:repeat;
 }
 
 /*
@@ -87,7 +89,7 @@ background-color: #036;
 }
 #uudised ul {
 	margin: 0;
-	padding: 5px;
+	padding: 2%;
 	list-style-type: none;
 }
 #uudised ul li {
@@ -115,15 +117,19 @@ WIDGETID
 	text-align: center;
 }
 #widgets ul li {
-	margin-bottom: 5px;
+	margin-bottom: 10px;
+	padding: 5px;
     background-color: #E5EBDF;
     border: 1px solid black;
+    
 }
 #widgets ul li a {
 	text-decoration: none;
 	color: black;
 }
-
+#widgets ul li:hover {
+	box-shadow: 5px 5px 3px black;
+}
 .disain {
     background-color: #369;
     border:solid 1px #F8EED3;
