@@ -135,3 +135,57 @@ WIDGETID
     margin: 5px;
     border: solid 1px;
 }
+/*
+UUDISELEHT
+*/
+#uudiscontainer {
+	color: black;
+    position: absolute;
+    left:  5%;
+    top: 10%;
+    width: 65%;
+    height: 85%;
+    overflow: auto;
+    
+}
+#uudisekene {
+	color: black;
+	background-color: white;
+    position: absolute;
+    left:  5%;
+    top: 1%;
+    width: 90%;
+    height: 98%;
+    overflow: auto;
+    
+}
+#uudisekene h1{
+	text-align: center;
+}
+#uudistekst{	
+	left: 5%;
+    position: center;
+}
+#uudispilt img{	
+    top: 2%;
+    width:60%;
+    
+}
+
+#chatikast {
+    text-align: center;
+    position: fixed;
+    top: 10%;
+    left: 75%;
+    height: 85%;
+    width: 20%;
+}
+#icons {
+    margin-left: 5px;
+    width: 4%;
+    height: 10%;
+}
+#icons img {
+    width: 100%;
+    height: auto;
+}
