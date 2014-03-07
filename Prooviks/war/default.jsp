@@ -42,7 +42,7 @@
 
         <div id="uudised" class="disain">
         	<ul>
-        		<li>Esimene</li>
+        		<li><a href="/uudis.jsp">BIEBER</a></li>
         		<li>Teine</li>
         		<li>Kolmas</li>
         	</ul>

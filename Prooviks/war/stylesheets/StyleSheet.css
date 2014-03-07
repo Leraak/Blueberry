@@ -82,11 +82,15 @@ background-color: #036;
 	margin: 0;
 	padding: 2%;
 	list-style-type: none;
+	text-align: center;
 }
 #uudised ul li {
 	margin-bottom: 5px;
     background-color: #E5EBDF;
     border: 1px solid black;
+}
+#uudised ul li a {
+	text-decoration: none;
 }
 
 /*
