@@ -207,6 +207,12 @@ UUDISELEHT
     height: 85%;
     width: 20%;
 }
+#chatikast textarea {
+	min-height: 90%;
+    height: auto !important;
+    width: 95%;
+    height: 100%;
+}
 #icons {
     margin-left: 5px;
     width: 4%;

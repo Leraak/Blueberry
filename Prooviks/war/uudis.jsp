@@ -11,12 +11,10 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="stylesheets/StyleSheet.css"/>
-        <style>
-        </style>
-        <script type="text/javascript"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-        <script src="js/popBox/popbox.min.js" type="text/javascript"></script>
-        <link href="js/popBox/popbox.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <link rel="stylesheet" href="js/fancyBox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+		<script type="text/javascript" src="js/fancyBox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+		<script type="text/javascript" src="js/fancybox_proov.js"></script>
         <title>BEST NEWS EU</title>
     </head>
     <body>
@@ -24,7 +22,8 @@
 		
         <div id="uudiscontainer" class="disain">
         	<div id="icons">
-	 			<img src="https://cdn1.iconfinder.com/data/icons/Android-R2-png/512/Maps-Android-R.png">
+        		<a class="variousmap" data-fancybox-type="iframe" title="kaart" href="/map.jsp"><img src="https://cdn1.iconfinder.com/data/icons/Android-R2-png/512/Maps-Android-R.png"></a>
+	 			
             </div>
             <div id="uudisekene">
 	 			<div id="uudispilt" style="text-align: center">
@@ -69,7 +68,7 @@ In June 2011, Bieber was ranked #2 on the Forbes list of Best-Paid Celebrities u
         <div id="chatikast" class="disain">
             <h2>Kommentaarid</h2>
             <div id="chat">
-            	<textarea rows="40" cols="40" readonly>Liisu13: Nii nummi!</textarea>
+            	<textarea id="note" readonly>Liisu13: Nii nummi!</textarea>
             </div>
             <div id="textbox">
             	Lisa kommentaar: <input type="kommentaar" name="komm">
