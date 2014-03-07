@@ -10,26 +10,31 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/StyleSheet2.css"/>
     </head>
 <body>
-	<div id="telli" class="disain">
-            <h2>Telli Meilile</h2>
-            <h3>Vali teemad</h3>
-            <h4>Kui tihti </h4>
-            <div id="valik">
-                <form>
-                    <input type="checkbox">Üks<br>
-                    <input type="checkbox">Kaks<br>
-                    <input type="checkbox">Kolm
-                </form>
-            </div>
-            <div id="kuna">
-              <select>
-  					<option value="paev">Kord päevas</option>
-  					<option value="nadal">Kord nädalas</option>
-  					<option value="kuu">Kord kuus</option>
-			  </select> 
-            </div>
-            <button id="b1" type="button">Telli</button> 
-            <button id="b2" type="button">x</button> 
+     <div id="telli">
+     <table>
+     	<caption><h2>Telli Meilile</h2></caption>
+     	<tr>
+     		<th>Vali teemad</th>
+     		<th>Kui tihti</th>
+     	</tr>
+     	<tr>
+     		<td>
+	     		<form>
+	                <input type="checkbox">Üks<br>
+	                <input type="checkbox">Kaks<br>
+	                <input type="checkbox">Kolm
+	            </form>
+     		</td>
+     		<td>
+     			<select>
+	  				<option value="paev">Kord päevas</option>
+	  				<option value="nadal">Kord nädalas</option>
+	  				<option value="kuu">Kord kuus</option>
+				</select> 
+     		</td>
+     	</tr>
+     </table>
+     <button type="button">Telli</button>
      </div>
 
 

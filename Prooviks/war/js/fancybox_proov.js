@@ -1,9 +1,10 @@
 $(document).ready(function() {
 	$(".various").fancybox({
-		maxWidth	: 800,
-		maxHeight	: 600,
+		padding : 2,
+		width	: 400,
+		height	: 300,
 		fitToView	: true,
-		autoSize	: true,
+		autoSize	: false,
 		closeClick	: false,
 		openEffect	: 'fade',
     	closeEffect	: 'fade'

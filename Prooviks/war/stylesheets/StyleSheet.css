@@ -3,6 +3,7 @@ body {
     /*background-color: #2E3135;*/
     background-image:url("/taustamustrid/grey_wash_wall.png");
 	background-repeat:repeat;
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 }
 
 /*
@@ -12,9 +13,9 @@ HEADER
 #header {
     position: fixed;
     height: 50px;
-    width: 100%;
+    width: 90%;
     padding: 0;
-    margin: 0;
+    margin-left: 5%;
     z-index: 1;
     top: 0;
     left: 0;
@@ -33,7 +34,6 @@ HEADER
 #logo h2 {
 	float: right;
 	margin-top: 5px;
-	font-family: cursive;
 	color: #fff;
 	display: inline-block;
 }
@@ -71,15 +71,6 @@ LOGIMINE
 color: #fff;
 background-color: #036;
 }
-#sisukord {
-    position:  fixed;
-    top:  10%;
-    left: 5%;
-    width: 15%;
-}
-#sisukord h2{
-    text-align: center;
-}
 #uudised {
     position: absolute;
     left:  25%;
@@ -96,6 +87,40 @@ background-color: #036;
 	margin-bottom: 5px;
     background-color: #E5EBDF;
     border: 1px solid black;
+}
+
+/*
+SISUKORD
+*/
+
+#sisukord {
+    position:  fixed;
+    top:  10%;
+    left: 5%;
+    width: 15%;
+}
+#sisukord h2{
+    text-align: center;
+}
+#valikud {
+	padding: 5px;
+	margin: 10%;
+	background-color: #E5EBDF;
+    border: 1px solid black;
+}
+#valikud form{
+	padding-left: 10px;
+}
+#otsing {
+	padding: 5px;
+	margin: 10%;
+	background-color: #E5EBDF;
+    border: 1px solid black;
+}
+#otsing input, button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*
@@ -122,6 +147,7 @@ WIDGETID
     background-color: #E5EBDF;
     border: 1px solid black;
     
+    
 }
 #widgets ul li a {
 	text-decoration: none;
@@ -135,11 +161,6 @@ WIDGETID
     border:solid 1px #F8EED3;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    font-family: Calibri, cursive;
-}
-#valikud {
-    margin: 5px;
-    border: solid 1px;
 }
 /*
 UUDISELEHT

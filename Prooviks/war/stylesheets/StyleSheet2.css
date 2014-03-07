@@ -1,46 +1,25 @@
 @CHARSET "UTF-8";
 
-#telli {
-    position:  fixed;
-    top:  0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
+#telli table {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	
 }
-#valik {
-    position:  absolute;
-    top:  40%;
-    left: 25%;
+#telli th {
+	color: white;
 }
-#kuna {
-    position:  absolute;
-    top:  40%;
-    left: 60%;
+#telli table, td, th {
+	border: 2px solid black;
+	font-size: 1em;
+	padding: 10px;
 }
-#telli h2 {
-    position:  absolute;
-    top:  5%;
-    left: 40%;
-}
-#b1 {
-    position:  absolute;
-    top:  80%;
-    left: 35%;
-    width: 30%;
-    height: 10%;
-}
-#telli h4{	
-	position: absolute;
-    font-size: large;
-    left: 60%;
-    top: 20%;
-    
-    
-}
-#telli h3{
-	position: absolute;
-    font-size: large;
-    left: 25%;
-    top: 20%;
-    
+
+#telli button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3%;
 }

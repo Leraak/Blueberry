@@ -23,8 +23,8 @@
 		<jsp:include page="/header.jsp"></jsp:include>
 		
         <div id="sisukord" class="disain">
-            <h2>TEEMAD</h2>
             <div id="valikud">
+            <h2>TEEMAD</h2>
                 <form>
                     <input type="checkbox">Üks<br>
                     <input type="checkbox">Kaks<br>
@@ -32,7 +32,7 @@
                 </form>
             </div>
             <div id="otsing">
-            	<h2>Otsing</h2>
+            	<h2>OTSING</h2>
             	<form>
             		<input type="text">
             		<button type="button">OTSI</button>
