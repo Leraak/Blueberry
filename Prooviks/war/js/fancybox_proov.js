@@ -9,4 +9,13 @@ $(document).ready(function() {
 		openEffect	: 'fade',
     	closeEffect	: 'fade'
 	});
+	$(".variousmap").fancybox({
+		padding : 2,
+		width	: 520,
+		fitToView	: true,
+		autoSize	: true,
+		closeClick	: false,
+		openEffect	: 'fade',
+    	closeEffect	: 'fade'
+	});
 });
