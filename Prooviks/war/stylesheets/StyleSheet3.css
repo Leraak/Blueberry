@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+/*
+*UUDISE LISAMINE
+*/
+
+#uudiseLisamine{
+	position: absolute;
+	margin-left: 5%;
+	padding: 20px;
+	top: 20%;
+	max-width: 90%;
+}
+#uudiseLisamine input, textarea{
+	margin: 5px;
+}
+#uudiseLisamine iframe {
+	margin: 10px;
+	width: 400px;
+	height: 300px;
+}
