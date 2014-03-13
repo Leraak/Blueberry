@@ -5,13 +5,21 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
-		<servlet-name>Uudisteportall</servlet-name>
-		<servlet-class>uudisteportaal.UudisteportallServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Uudisteportall</servlet-name>
-		<url-pattern>/uudisteportall</url-pattern>
-	</servlet-mapping>
+        <servlet-name>sign</servlet-name>
+        <servlet-class>server.AndmebaasiTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sign</servlet-name>
+        <url-pattern>/sign</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    	<servlet-name>addNews</servlet-name>
+    	<servlet-class>server.UudiseLisamine</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>addNews</servlet-name>
+    	<url-pattern>/addNews</url-pattern>
+    </servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
