@@ -63,7 +63,7 @@ LOGIMINE
 	display: block;
     text-decoration: none;
     color: #fff;
-    padding: 14.5px 1em;
+    padding: 0.8em;
     background-color: #369;
 }
 #logimine ul li a:hover
@@ -193,11 +193,16 @@ UUDISELEHT
     overflow: auto;
     
 }
+#uudispilt{
+	margin: 10px;
+}
 #uudisekene h1{
 	text-align: center;
+	margin: 10px;
 }
 #uudistekst{	
 	left: 5%;
+	margin: 20px;
     position: center;
 }
 #uudispilt img{	
