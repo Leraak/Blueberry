@@ -17,7 +17,7 @@
 		<script type="text/javascript" src="js/fancybox_proov.js"></script>
 		
         
-        <title>BEST NEWS EU</title>
+        <title>Mustikauudised</title>
     </head>
     <body>
 		<jsp:include page="/header.jsp"></jsp:include>
@@ -42,9 +42,9 @@
 
         <div id="uudised" class="disain">
         	<ul>
-        		<li><a href="/uudis.jsp">BIEBER</a></li>
-        		<li>Teine</li>
-        		<li>Kolmas</li>
+        		<li>
+        		<a href="/uudis.jsp"><img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" height="50%" width="50%"></a><br>
+        		<a href="/uudis.jsp">Kommid</a></li>
         	</ul>
         </div>
 
