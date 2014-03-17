@@ -1,4 +1,6 @@
 body {
+	background-image:url("/taustamustrid/grey_wash_wall.png");
+	background-repeat:repeat;
 	padding-top: 70px;
 	padding-left: 50px;
 	padding-right: 50px;
