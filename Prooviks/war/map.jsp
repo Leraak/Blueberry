@@ -18,18 +18,7 @@
       	}
         </style>
         <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-        <script>
-     		function initialize() {
-        		var map_canvas = document.getElementById('map_canvas');
-        		var map_options = {
-          			center: new google.maps.LatLng(58.378307, 26.71463),
-          			zoom: 18,
-          			mapTypeId: google.maps.MapTypeId.ROADMAP
-        			}
-        		var map = new google.maps.Map(map_canvas, map_options)
-      			}
-      		google.maps.event.addDomListener(window, 'load', initialize);
-    	</script>
+        <script type="text/javascript" src="js/map.js"></script>
         <script type="text/javascript"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script src="js/popBox/popbox.min.js" type="text/javascript"></script>
@@ -38,5 +27,10 @@
     </head>
     <body>
 		<div id="map_canvas"></div>
+    	<label for="latitude">Latitude:</label>
+    	<input id="latitude" type="text" value="" />
+  	    <label for="longitude">Longitude:</label>
+    	<input id="longitude" type="text" value="" />
+		
     </body>
 </html>
