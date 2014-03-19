@@ -52,43 +52,50 @@
         </div><!--/.navbar-collapse -->
       </div>
     </div>
-    <div class="col-md-6">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <h4 class="list-group-item-heading">Kommid</h4>
-              <div class="thumbnail">
+    <div class="col-md-4">
+    <div class="thumbnail">
 		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
+		      <div class="caption">
+		        <h3>KOMMID</h3>
+		        <p>XDDDDDDDDD</p>
+		        <p><a href="#" class="btn btn-primary" role="button">Lisa lemmikutesse</a> 
+		        <a href="#" class="btn btn-default" role="button">Muuda</a></p>
 		      </div>
-              <p class="list-group-item-text">Kommid ruulivad</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <h4 class="list-group-item-heading">Uudis 2</h4>
-              <p class="list-group-item-text">blabla</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <h4 class="list-group-item-heading">Uudis 3</h4>
-              <p class="list-group-item-text">bööö</p>
-            </a>
-          </div>
+		    </div>
         </div><!-- /.col-sm-4 -->
-        <div class="col-md-6">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <h4 class="list-group-item-heading">Kommid</h4>
-              <div class="thumbnail">
+        <div class="col-md-4">
+          <div class="thumbnail">
 		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
+		      <div class="caption">
+		        <h3>KOMMID</h3>
+		        <p>XDDDDDDDDD</p>
+		        <p><a href="#" class="btn btn-primary" role="button">Lisa lemmikutesse</a> 
+		        <a href="#" class="btn btn-default" role="button">Muuda</a></p>
 		      </div>
-              <p class="list-group-item-text">Kommid ruulivad</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <h4 class="list-group-item-heading">Uudis 2</h4>
-              <p class="list-group-item-text">blabla</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <h4 class="list-group-item-heading">Uudis 3</h4>
-              <p class="list-group-item-text">bööö</p>
-            </a>
-          </div>
+		    </div>
+        </div><!-- /.col-sm-4 -->
+        <div class="col-md-4">
+          <div class="thumbnail">
+		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
+		      <div class="caption">
+		        <h3>KOMMID</h3>
+		        <p>XDDDDDDDDD</p>
+		        <p><a href="#" class="btn btn-primary" role="button">Lisa lemmikutesse</a> 
+		        <a href="#" class="btn btn-default" role="button">Muuda</a></p>
+		      </div>
+		    </div>
+		    </div>
+		    <div class="col-md-4">
+          <div class="thumbnail">
+		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
+		      <div class="caption">
+		        <h3>KOMMID</h3>
+		        <p>XDDDDDDDDD</p>
+		        <p><a href="#" class="btn btn-primary" role="button">Lisa lemmikutesse</a> 
+		        <a href="#" class="btn btn-default" role="button">Muuda</a></p>
+		      </div>
+		    </div>
+		    </div>
         </div><!-- /.col-sm-4 -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
