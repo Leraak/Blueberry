@@ -1,4 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.google.appengine.api.users.User" %>
+<%@ page import="com.google.appengine.api.users.UserService" %>
+<%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,7 +56,26 @@
       	<div class="caption">
 			<h4>Valikud:</h4>
       		<p><a href="#" class="btn btn-primary" role="button">Favorite</a></p>
-      		<p><a data-fancybox-type="iframe" title="kaart" href="/map.jsp" class="btn btn-default" role="button" id = "mapbutton">Map</a></p>
+      		<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Map
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Kaart</h4>
+      </div>
+      <div class="modal-body">
+        <object type="text/html" data="/map.jsp">
+    </object>
+      </div>
+    </div>
+  </div>
+</div>
       		<p><a href="#" class="btn btn-default" role="button">Edit</a></p>
       	</div>
       </div>
