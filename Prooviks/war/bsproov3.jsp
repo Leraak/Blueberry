@@ -36,23 +36,29 @@
             <li><a href="#logi">Logi sisse</a></li>
             <li><a href="#registreeri">Registreeri</a></li>
             <li><a href="#kontakt">Kontakteeru</a></li>
-          </ul>
-          <div class="col-md-12">
-          <ul class="nav navbar-nav navbar-left">
-            <li><a href="#t1">Teema 1</a></li>
-            <li><a href="#t2">Teema 2</a></li>
-            <li><a href="#t3">Koerad</a></li>
-            <li><a href="#o">
-            	<form>
-            		<input type="text">
-            		<button type="button">OTSI</button>
-            	</form></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teemad/Otsi <b class="caret"></b></a>			 
+              <ul class="dropdown-menu">
+   			 	<li><a href="#t1">Teema 1</a></li>
+            	<li><a href="#t2">Teema 2</a></li>
+            	<li><a href="#t3">Teema 3</a></li>
+            	<li><a href="#t6">Koerad</a></li>
+    			<li class="divider"></li>
+    			<li>
+            	  <form class="navbar-form navbar-left" role="search">
+       				<div class="form-group">
+         			 <input type="text" class="form-control" placeholder="Otsi">
+        			</div>
+        			<button type="submit" class="btn btn-default">OTSI</button>
+     		 	  </form>
+     		    </li>
+     		   </ul>
+     		</li>
           </ul>
           </div>
-        </div><!--/.navbar-collapse -->
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6 col-lg-4" >
     <div class="thumbnail">
 		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
 		      <div class="caption">
@@ -63,7 +69,7 @@
 		      </div>
 		    </div>
         </div><!-- /.col-sm-4 -->
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4">
           <div class="thumbnail">
 		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
 		      <div class="caption">
@@ -74,7 +80,7 @@
 		      </div>
 		    </div>
         </div><!-- /.col-sm-4 -->
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4">
           <div class="thumbnail">
 		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
 		      <div class="caption">
@@ -85,7 +91,7 @@
 		      </div>
 		    </div>
 		    </div>
-		    <div class="col-md-4">
+		    <div class="col-md-6 col-lg-4">
           <div class="thumbnail">
 		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
 		      <div class="caption">
@@ -96,7 +102,6 @@
 		      </div>
 		    </div>
 		    </div>
-        </div><!-- /.col-sm-4 -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
