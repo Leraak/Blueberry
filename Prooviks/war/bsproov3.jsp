@@ -20,44 +20,7 @@
     <![endif]-->
   </head>
   <body>
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Mustikauudised</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#logi">Logi sisse</a></li>
-            <li><a href="#registreeri">Registreeri</a></li>
-            <li><a href="#kontakt">Kontakteeru</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teemad/Otsi <b class="caret"></b></a>			 
-              <ul class="dropdown-menu">
-   			 	<li><a href="#t1">Teema 1</a></li>
-            	<li><a href="#t2">Teema 2</a></li>
-            	<li><a href="#t3">Teema 3</a></li>
-            	<li><a href="#t6">Koerad</a></li>
-    			<li class="divider"></li>
-    			<li>
-            	  <form class="navbar-form navbar-left" role="search">
-       				<div class="form-group">
-         			 <input type="text" class="form-control" placeholder="Otsi">
-        			</div>
-        			<button type="submit" class="btn btn-default">OTSI</button>
-     		 	  </form>
-     		    </li>
-     		   </ul>
-     		</li>
-          </ul>
-          </div>
-      </div>
-    </div>
+	<jsp:include page="/header2.jsp"></jsp:include>
     <div class="col-md-6 col-lg-4" >
     <div class="thumbnail">
 		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
