@@ -27,11 +27,20 @@ public class UudiseLisamine extends HttpServlet {
 		try {
 	    	Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
 	      try {
+	    	  ResultSet rs = conn.createStatement().executeQuery("SELECT EXISTS(select * from uudised where uudise_pealkiri='" + req.getParameter("pealkiri") + "')");
+	    	  rs.next();
+	    	  if(Integer.parseInt(rs.getString("SELECT EXISTS(select * from uudised where uudise_pealkiri='" + req.getParameter("pealkiri") + "')")) > 0 ){
+	    		  out.println(
+	  	                "<html><head></head><body>Sellise pealkirjaga uudis on juba olemas! " +
+	  	                "Redirecting...</body></html>");
+	    		  resp.setHeader("Refresh", "1; url=/lisa.jsp");
+	    	  }
+	    	  else {
 	        String uudise_pealkiri = req.getParameter("pealkiri");
 	        String uudise_sisu = req.getParameter("sisu");
 	        String pildi_url = req.getParameter("pildi_url");
-	        Double latitude = Double.parseDouble(req.getParameter("latitude"));
-	        Double longitude = Double.parseDouble(req.getParameter("longitude"));
+	        Double latitude = Double.parseDouble(req.getParameter("Latitude"));
+	        Double longitude = Double.parseDouble(req.getParameter("Longitude"));
 	        String tag = req.getParameter("tags");
 	        if (uudise_pealkiri == "" || uudise_sisu == "") {
 	          out.println(
@@ -51,19 +60,20 @@ public class UudiseLisamine extends HttpServlet {
 	          int success = 2;
 	          success = ps.executeUpdate();
 	          if (success == 1) {
-	            	resp.sendRedirect("default.jsp");
+	            	resp.sendRedirect("bsproov3.jsp");
 	          } else if (success == 0) {
 	            out.println(
 	                "<html><head></head><body>Ebaõnnestus! Proovi uuesti! " +
 	                "Redirecting...</body></html>");
 	          }
 	        }
+	    	  }
 	      } finally {
 	        conn.close();
 	      }
 	    } catch (SQLException e) {
 	      e.printStackTrace();
 	    }
-		resp.setHeader("Refresh", "1; url=/uudiselisamine.jsp");
+		resp.setHeader("Refresh", "1; url=/lisa.jsp");
 	}
 }
