@@ -20,49 +20,49 @@
     <!-- Bootstrap -->
     <link href="bsstyle/bootstrap.min.css" rel="stylesheet">
     <link href="bsstyle/StyleSheet4.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
   
   
   <body>
- 	 <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Mustikauudised</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Logi sisse</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-    
+  	<jsp:include page="/header2.jsp"></jsp:include>
+  	<div class="container">
       <div class="row">
-      <div class="col-sm-1 well">
-      	<div class="caption">
-			<h4>Valikud:</h4>
-      		<p><a href="#" class="btn btn-primary" role="button">Favorite</a></p>
-      		<!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Map
-</button>
+  		<div class="col-xl-2 well">
+			<div class="thumbnail">
+		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">	
+		      <div class="nupud">
+		      	<button class="btn btn-primary btn-lg">Lisa lemmikutesse</button>
+		      	<button class="btn btn-primary btn-lg">Muuda uudist</button>
+			  	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Kaart</button>
+			  </div>
+		      <div class="caption">
+		        <h3>KOMMID</h3>
+		        <p>Tallinnas, Pärnu maanteel Kalevi kommikaupluse tagatoas valmivad OÜ Karamelle käsitöökompvekid, mida mekivad nii peaministrid, presidendid kui ka kroonitud pead. Rootsi kuningat vaimustasid Eesti kommimeistri Vello Koosma käe all valminud kadakamarjakommid koguni nõnda, et ta neli tükki järgemööda ära sõi! 
+            		Missugune on Karamelle suussulavate kompvekkide saladus ning kuidas näeb välja pisikese, kõigest 7 töötajaga kommivabriku argipäev, vaata Tallinncity videost!
+            		Tallinnas, Pärnu maanteel Kalevi kommikaupluse tagatoas valmivad OÜ Karamelle käsitöökompvekid, mida mekivad nii peaministrid, presidendid kui ka kroonitud pead. Rootsi kuningat vaimustasid Eesti kommimeistri Vello Koosma käe all valminud kadakamarjakommid koguni nõnda, et ta neli tükki järgemööda ära sõi! 
+            		Missugune on Karamelle suussulavate kompvekkide saladus ning kuidas näeb välja pisikese, kõigest 7 töötajaga kommivabriku argipäev, vaata Tallinncity videost!
+            		Tallinnas, Pärnu maanteel Kalevi kommikaupluse tagatoas valmivad OÜ Karamelle käsitöökompvekid, mida mekivad nii peaministrid, presidendid kui ka kroonitud pead. Rootsi kuningat vaimustasid Eesti kommimeistri Vello Koosma käe all valminud kadakamarjakommid koguni nõnda, et ta neli tükki järgemööda ära sõi! 
+            		Missugune on Karamelle suussulavate kompvekkide saladus ning kuidas näeb välja pisikese, kõigest 7 töötajaga kommivabriku argipäev, vaata Tallinncity videost!</p>
+		      </div>
+		    </div>
+		    
+  		</div>
+  		<div class="col-xl-6 well">
+  			<h3>Kommentaarid</h3>
+			<div class="alert alert-success"><h4>Kasutaja1</h4>Mulle maitsevad kommid.</div>	
+			<div class="alert alert-lilla"><h4>Kasutaja1</h4>Mulle maitsevad kommid.</div>		
+			<div class="alert alert-danger"><h4>Kasutaja2</h4>Mulle ei maitse kommid.</div>
+			<div class="alert alert-info"><h4>Kasutaja3</h4>Jobu oled.</div>
+			<div class="alert alert-warning"><h4>Kasutaja4</h4>EDGAR, PUTIN, jeeee</div>
+  		</div>
+  		
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div> <!-- /container -->
+	</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -76,65 +76,5 @@
     </div>
   </div>
 </div>
-      		<p><a href="#" class="btn btn-default" role="button">Edit</a></p>
-      	</div>
-      </div>
-  		<div class="col-sm-8 main well">
-			<div class="thumbnail">
-		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
-		      <div class="caption">
-		        <h3>KOMMID</h3>
-		        <p>Tallinnas, Pärnu maanteel Kalevi kommikaupluse tagatoas valmivad OÜ Karamelle käsitöökompvekid, mida mekivad nii peaministrid, presidendid kui ka kroonitud pead. Rootsi kuningat vaimustasid Eesti kommimeistri Vello Koosma käe all valminud kadakamarjakommid koguni nõnda, et ta neli tükki järgemööda ära sõi! 
-            		Missugune on Karamelle suussulavate kompvekkide saladus ning kuidas näeb välja pisikese, kõigest 7 töötajaga kommivabriku argipäev, vaata Tallinncity videost!
-            		Tallinnas, Pärnu maanteel Kalevi kommikaupluse tagatoas valmivad OÜ Karamelle käsitöökompvekid, mida mekivad nii peaministrid, presidendid kui ka kroonitud pead. Rootsi kuningat vaimustasid Eesti kommimeistri Vello Koosma käe all valminud kadakamarjakommid koguni nõnda, et ta neli tükki järgemööda ära sõi! 
-            		Missugune on Karamelle suussulavate kompvekkide saladus ning kuidas näeb välja pisikese, kõigest 7 töötajaga kommivabriku argipäev, vaata Tallinncity videost!
-            		Tallinnas, Pärnu maanteel Kalevi kommikaupluse tagatoas valmivad OÜ Karamelle käsitöökompvekid, mida mekivad nii peaministrid, presidendid kui ka kroonitud pead. Rootsi kuningat vaimustasid Eesti kommimeistri Vello Koosma käe all valminud kadakamarjakommid koguni nõnda, et ta neli tükki järgemööda ära sõi! 
-            		Missugune on Karamelle suussulavate kompvekkide saladus ning kuidas näeb välja pisikese, kõigest 7 töötajaga kommivabriku argipäev, vaata Tallinncity videost!</p>
-		      </div>
-		    </div>
-  		</div>
-  		<div class="row">
-		  <div class="col-sm-3 sidebar well">
-		  <h3>Kommentaarid</h3>
-			  <ul class="nav nav-sidebar">
-	            <li><div class="panel panel-default">
-				  <div class="panel-heading">
-				    <h3 class="panel-title">Kasutaja1</h3>
-				  </div>
-				  <div class="panel-body">
-				    suussulavate kompvekkide saladus ning kuidas näeb välja pisikese, kõigest 7 töötajaga kommivabriku argipäev, vaata Tallinncity videost!
-            		Tallinnas, Pärnu maanteelune on Karamelle suussulavate kompvekkide saladus ning kuidas näeb välja pisikese, kõigest 7 töötajaga kommivabriku argipäev, vaata Tallinncity videost!
-            		Tallinnas, Pärnu maanteel Kalevi kommikaupluse tagatoas valmivad OÜ Karamelle käsitöökompvekid, mida mekivad nii peaministrid, presidendid kui ka kroonitud pead. Rootsi kuningat vaimustasid Eesti kommimeistri Vello Koosma käe all valminud kadakamarjakommid koguni nõnda, et ta neli tükki järgemööda ära sõi! 
-            		Missugune on Karamelle suussulavate kompvekkide saladus ning kuidas näeb välja pisikese, kõigest 7 töötajaga kommivabriku argipäev, vaata Tallinncity videost!
-            		Tallinnas, Pärnu ma
-				  </div>
-				</div>
-	            </li>
-	            <li><div class="panel panel-default">
-				  <div class="panel-heading">
-				    <h3 class="panel-title">Kasutaja1</h3>
-				  </div>
-				  <div class="panel-body">
-				    Missugune on Karamelle suussulavate kompvekkide saladus ningune on Karamelle suussulavate kompvekkide saladus ning kuidas näeb välja pisikese, kõigest 7 töötajaga kommivabriku argipäev, vaata Tallinncity videost!
-            		Tallinnas, Pärnu maanteel Kalevi kommikaupluse tagatoas valmivad OÜ Karamelle käsitöökompvekid, mida mekivad nii peaministrid, presidendid kui ka kroonitud pead. Rootsi kuningat vaimustasid Eesti kommimeistri Vello Koosma käe all valminud kadakamarjakommid koguni nõnda, et ta neli tükki järgemööda ära sõi! 
-            		Missugune on Karamelle suussulavate kompvekkide saladus ning kuidas näeb välja pisikese, kõigest 7 töötajaga kommivabriku argipäev, vaata Tallinncity videost!
-            		Tallinnas, Pärnu ma
-				  </div>
-				</div>
-				</li>
-	          </ul>
-	          <div class="col-sm-12">
-	          	<input type="text" class="form-control" id="kommentaar" placeholder="Lisa kommentaar">
-	          </div>
-	          
-		  </div>
-		</div>
-
-    </div> <!-- /container -->
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

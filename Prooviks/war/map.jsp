@@ -10,7 +10,6 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="stylesheets/StyleSheet.css"/>
         <style>
         #map_canvas {
         width: 500px;
@@ -27,10 +26,6 @@
     </head>
     <body>
 		<div id="map_canvas"></div>
-    	<label for="latitude">Latitude:</label>
-    	<input id="latitude" type="text" value="" />
-  	    <label for="longitude">Longitude:</label>
-    	<input id="longitude" type="text" value="" />
 		
     </body>
 </html>
