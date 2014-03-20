@@ -29,29 +29,29 @@
             </div>
             <div class="panel-body">
 	 		<div class="col-md-6">
-            <form class="form-horizontal" role="form"> <!-- FORM  -->
+            <form class="form-horizontal" role="form" action="/lisaUudis" method="post"> <!-- FORM  -->
 			  <div class="form-group">
     				<h2><label for="Pealkiri">Pealkiri</label></h2>
     				<div class="col-sm-6">
-    					<input type="text" class="form-control" id="Pealkiri" placeholder="Pealkiri">
+    					<input type="text" class="form-control" name="pealkiri" id="Pealkiri" placeholder="Pealkiri">
     				</div>
   				</div>
 			  <div class="form-group">
 				    <h2><label for="Sisu">Sisu</label></h2>
 				    <div class="col-sm-6">
-				    	<textarea name="Sisu" rows="4" cols="40"></textarea>
+				    	<textarea name="sisu" id="Sisu" rows="4" cols="40"></textarea>
 				    </div>
 				</div>
 				<div class="form-group">
 				    <h2><label for="Pildi_url">Pildi url</label></h2>
 				    <div class="col-sm-6">
-				    	<input type="text" class="form-control" id="Pildi_url" placeholder="Pildi url">
+				    	<input type="text" class="form-control" name="pildi_url" id="Pildi_url" placeholder="Pildi url">
 				    </div>
 				</div>
 				<div class="form-group">
 				    <h2><label for="Tags">Tagid (eralda komadega)</label></h2>
 				    <div class="col-sm-6">
-				    	<input type="text" class="form-control" id="Tags" placeholder="Tagid">
+				    	<input type="text" class="form-control" name="tags" id="Tags" placeholder="Tagid">
 				    </div>
 				</div>
 			</div>
@@ -62,15 +62,15 @@
 				    <div class="col-sm-6">
 				    	<div id="map_canvas"></div>
 				    	<label for="latitude">Latitude:</label>
-	    				<input id="latitude" type="text" value="" /><br>
+	    				<input name="Latitude" id="latitude" type="text" value="" /><br>
 	  	    			<label for="longitude">Longitude:</label>
-	    				<input id="longitude" type="text" value="" />
+	    				<input name="Longitude" id="longitude" type="text" value="" />
 				    </div>
 				    
 				</div>
 			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-default">Sign in</button>
+			    <div class="col-sm-10">
+			      <button type="submit" class="btn btn-default">Lisa uudis</button>
 			    </div>
 			  </div>
 			  </div>

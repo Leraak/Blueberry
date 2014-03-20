@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="com.google.appengine.api.utils.SystemProperty" %>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -20,51 +23,43 @@
     <![endif]-->
   </head>
   <body>
+  <%
+  Class.forName("com.mysql.jdbc.GoogleDriver");
+  
+	Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
+	ResultSet rs = conn.createStatement().executeQuery(
+	    "SELECT uudiseid, uudise_pealkiri, uudise_sisu, pildi_url FROM uudised order by uudiseid desc");
+%>
+  
 	<jsp:include page="/header2.jsp"></jsp:include>
-    <div class="col-md-6 col-lg-4" >
-    <div class="thumbnail">
-		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
+	<div class="row">
+    <%
+	while (rs.next()) {
+		int id = rs.getInt("uudiseid");
+		String pealkiri = rs.getString("uudise_pealkiri");
+		String uudise_sisu = rs.getString("uudise_sisu");
+		String pildi_url = rs.getString("pildi_url");
+	 %>
+	   <div class="col-md-6 col-lg-4" >
+		<div class="thumbnail">
+			<a href="/bsuudis.jsp?id=<%= id %>">
+		      <img src="<%= pildi_url  %>" width="300px" alt="...">
+		      </a>
 		      <div class="caption">
-		        <h3>KOMMID</h3>
-		        <p>XDDDDDDDDD</p>
+		      <a href="/bsuudis.jsp?id=<%= id %>">
+		        <h3><%= pealkiri %></h3>
+		        </a>
+		        <p> tagid </p>
 		        <p><a href="#" class="btn btn-primary" role="button">Lisa lemmikutesse</a> 
 		        <a href="#" class="btn btn-default" role="button">Muuda</a></p>
 		      </div>
 		    </div>
         </div><!-- /.col-sm-4 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="thumbnail">
-		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
-		      <div class="caption">
-		        <h3>KOMMID</h3>
-		        <p>XDDDDDDDDD</p>
-		        <p><a href="#" class="btn btn-primary" role="button">Lisa lemmikutesse</a> 
-		        <a href="#" class="btn btn-default" role="button">Muuda</a></p>
-		      </div>
-		    </div>
-        </div><!-- /.col-sm-4 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="thumbnail">
-		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
-		      <div class="caption">
-		        <h3>KOMMID</h3>
-		        <p>XDDDDDDDDD</p>
-		        <p><a href="#" class="btn btn-primary" role="button">Lisa lemmikutesse</a> 
-		        <a href="#" class="btn btn-default" role="button">Muuda</a></p>
-		      </div>
-		    </div>
-		    </div>
-		    <div class="col-md-6 col-lg-4">
-          <div class="thumbnail">
-		      <img src="http://f3.pmo.ee/f/2014/03/12/2889646t151hc3c1.jpg" alt="...">
-		      <div class="caption">
-		        <h3>KOMMID</h3>
-		        <p>XDDDDDDDDD</p>
-		        <p><a href="#" class="btn btn-primary" role="button">Lisa lemmikutesse</a> 
-		        <a href="#" class="btn btn-default" role="button">Muuda</a></p>
-		      </div>
-		    </div>
-		    </div>
+	<%
+	}
+	conn.close();
+	%>
+	</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
