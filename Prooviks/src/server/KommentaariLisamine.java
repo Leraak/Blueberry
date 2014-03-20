@@ -7,7 +7,7 @@ import javax.servlet.http.*;
 
 import com.google.appengine.api.utils.SystemProperty;
 
-public class UudiseLisamine extends HttpServlet {
+public class KommentaariLisamine extends HttpServlet {
 
 	/**
 	 * 
@@ -16,6 +16,7 @@ public class UudiseLisamine extends HttpServlet {
 	
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		int uudise_id = 0;
 		try {
 			Class.forName("com.mysql.jdbc.GoogleDriver");
 		    } catch (Exception e) {
@@ -27,31 +28,26 @@ public class UudiseLisamine extends HttpServlet {
 		try {
 	    	Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
 	      try {
-	        String uudise_pealkiri = req.getParameter("pealkiri");
-	        String uudise_sisu = req.getParameter("sisu");
-	        String pildi_url = req.getParameter("pildi_url");
-	        Double latitude = Double.parseDouble(req.getParameter("latitude"));
-	        Double longitude = Double.parseDouble(req.getParameter("longitude"));
-	        String tag = req.getParameter("tags");
-	        if (uudise_pealkiri == "" || uudise_sisu == "") {
+	        String kommenteerija = req.getParameter("name");
+	        uudise_id = Integer.parseInt(req.getParameter("id"));
+	        String kommentaar = req.getParameter("kommentaar");
+	        
+	        if (kommentaar == "") {
 	          out.println(
-	              "<html><head></head><body>Sa ei sisestanud pealkirja ega uudise sisu. " +
+	              "<html><head></head><body>Puudub sisu. " +
 	              "Redirecting...</body></html>");
 	        } else {
 	        //andmed andmebaasi
-	          String statement = "INSERT INTO uudised (uudise_pealkiri, uudise_sisu, pildi_url, asukoht_lat, asukoht_long, tag) VALUES( ? , ? , ? , ? , ? , ? )";
+	          String statement = "INSERT INTO kommentaarid (kommenteerija, uudiseID, kommentaar) VALUES( ? , ? , ? )";
 	          PreparedStatement ps = conn.prepareStatement(statement);
-	          ps.setString(1, uudise_pealkiri);
-	          ps.setString(2, uudise_sisu);
-	          ps.setString(3, pildi_url);
-	          ps.setDouble(4, latitude);
-	          ps.setDouble(5, longitude);
-	          ps.setString(6, tag);
+	          ps.setString(1, kommenteerija);
+	          ps.setInt(2, uudise_id);
+	          ps.setString(3, kommentaar);
 	          
 	          int success = 2;
 	          success = ps.executeUpdate();
 	          if (success == 1) {
-	            	resp.sendRedirect("default.jsp");
+	            	resp.sendRedirect("uudis.jsp?id=" + uudise_id);
 	          } else if (success == 0) {
 	            out.println(
 	                "<html><head></head><body>Ebaõnnestus! Proovi uuesti! " +
@@ -64,6 +60,6 @@ public class UudiseLisamine extends HttpServlet {
 	    } catch (SQLException e) {
 	      e.printStackTrace();
 	    }
-		resp.setHeader("Refresh", "1; url=/uudiselisamine.jsp");
+		resp.sendRedirect("uudis.jsp?id=" + uudise_id);
 	}
 }

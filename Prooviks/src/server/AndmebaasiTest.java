@@ -34,7 +34,7 @@ public class AndmebaasiTest extends HttpServlet {
 		
 		PrintWriter out = resp.getWriter();
 	    try {
-	    	Connection conn = DriverManager.getConnection(url, "root", "parool");
+	    	Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
 	      try {
 	        String nimi = req.getParameter("name");
 	        String sisu = req.getParameter("sisu");
