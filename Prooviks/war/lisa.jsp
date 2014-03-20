@@ -10,10 +10,8 @@
 
     <!-- Bootstrap -->
     <link href="bsstyle/bootstrap.min.css" rel="stylesheet">
-    <link href="stylesheets/StyleSheet5.css" rel="stylesheet">
-    <link href="bsstyle/StyleSheet4.css" rel="stylesheet">
     <link href="bsstyle/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="js/popBox/popbox.css" rel="stylesheet" type="text/css"/>
+    <link href="stylesheets/lisauudis.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,42 +22,64 @@
   </head>
   <body>
 	<jsp:include page="/header2.jsp"></jsp:include>
-	 <div class="row">
-	 	<div class="col-md-6">
-          <div class="panel panel-default">
+	 	<div class="row">
+	 	<div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Lisa Uudis</h3>
             </div>
             <div class="panel-body">
-              <form>
-              	 <div class="form-group">
+	 		<div class="col-md-6">
+            <form class="form-horizontal" role="form"> <!-- FORM  -->
+			  <div class="form-group">
     				<h2><label for="Pealkiri">Pealkiri</label></h2>
-    				<input type="text" class="form-control" id="Pealkiri" placeholder="Pealkiri">
+    				<div class="col-sm-6">
+    					<input type="text" class="form-control" id="Pealkiri" placeholder="Pealkiri">
+    				</div>
   				</div>
-				<div class="form-group">
+			  <div class="form-group">
 				    <h2><label for="Sisu">Sisu</label></h2>
-				    <textarea name="sisu" rows="4" cols="60"></textarea>
+				    <div class="col-sm-6">
+				    	<textarea name="Sisu" rows="4" cols="40"></textarea>
+				    </div>
 				</div>
-                <h2>Uudise pilt</h2>
-                	<input type="url" class="form-control" id="Pilt"placeholder="Pilt">
-                <h2>Uudise asukoht</h2>
-                	<style>
-        				#map_canvas {
-        				width: 500px;
-        				height: 400px;
-      					}
-        			</style>
-                	<div id="map_canvas"></div>
-    				<label for="latitude">Latitude:</label>
-    				<input id="latitude" type="text" value="" />
-  	    			<label for="longitude">Longitude:</label>
-    				<input id="longitude" type="text" value="" />
-
-              </form>
-            </div>
-         </div>
-        </div>
-        </div>
+				<div class="form-group">
+				    <h2><label for="Pildi_url">Pildi url</label></h2>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control" id="Pildi_url" placeholder="Pildi url">
+				    </div>
+				</div>
+				<div class="form-group">
+				    <h2><label for="Tags">Tagid (eralda komadega)</label></h2>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control" id="Tags" placeholder="Tagid">
+				    </div>
+				</div>
+			</div>
+			<div class="row">
+	 			<div class="col-md-6">
+			  <div class="form-group">
+			  		<h2>Uudise asukoht: </h2>
+				    <div class="col-sm-6">
+				    	<div id="map_canvas"></div>
+				    	<label for="latitude">Latitude:</label>
+	    				<input id="latitude" type="text" value="" /><br>
+	  	    			<label for="longitude">Longitude:</label>
+	    				<input id="longitude" type="text" value="" />
+				    </div>
+				    
+				</div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-default">Sign in</button>
+			    </div>
+			  </div>
+			  </div>
+			</div>
+			</form><!-- FORM END -->
+			
+			</div>
+			</div>
+			</div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
