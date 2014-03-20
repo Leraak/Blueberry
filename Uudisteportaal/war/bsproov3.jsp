@@ -3,17 +3,16 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="com.google.appengine.api.utils.SystemProperty" %>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Proov3</title>
+    <title>Mustikauudised</title>
+    <meta charset="UTF-8">
 
     <!-- Bootstrap -->
-    <link href="bsstyle/bootstrap.min.css" rel="stylesheet">
-    <link href="stylesheets/StyleSheet5.css" rel="stylesheet">
-    <link href="bsstyle/bootstrap-theme.min.css" rel="stylesheet">
+    <link type="text/css" href="bsstyle/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="stylesheets/StyleSheet5.css" rel="stylesheet">
+    <link type="text/css" href="bsstyle/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,15 +42,13 @@
 	   <div class="col-md-6 col-lg-4" >
 		<div class="thumbnail">
 			<a href="/bsuudis.jsp?id=<%= id %>">
-		      <img src="<%= pildi_url  %>" width="300px" alt="...">
+		      <img src="<%= pildi_url  %>" alt="<%= pealkiri %>">
 		      </a>
 		      <div class="caption">
 		      <a href="/bsuudis.jsp?id=<%= id %>">
 		        <h3><%= pealkiri %></h3>
 		        </a>
-		        <p> tagid </p>
 		        <p><a href="#" class="btn btn-primary" role="button">Lisa lemmikutesse</a> 
-		        <a href="#" class="btn btn-default" role="button">Muuda</a></p>
 		      </div>
 		    </div>
         </div><!-- /.col-sm-4 -->
