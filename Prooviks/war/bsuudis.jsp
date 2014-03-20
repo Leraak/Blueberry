@@ -49,7 +49,6 @@
   		<div class="col-xl-6 well">
   			<h3>Kommentaarid</h3>
 			<div class="alert alert-success"><h4>Kasutaja1</h4>Mulle maitsevad kommid.</div>	
-			<div class="alert alert-lilla"><h4>Kasutaja1</h4>Mulle maitsevad kommid.</div>		
 			<div class="alert alert-danger"><h4>Kasutaja2</h4>Mulle ei maitse kommid.</div>
 			<div class="alert alert-info"><h4>Kasutaja3</h4>Jobu oled.</div>
 			<div class="alert alert-warning"><h4>Kasutaja4</h4>EDGAR, PUTIN, jeeee</div>
