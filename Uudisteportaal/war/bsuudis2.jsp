@@ -7,6 +7,15 @@
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,22 +49,9 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-          <%
-          String id = request.getParameter("id");
-			    UserService userService = UserServiceFactory.getUserService();
-			    User user = userService.getCurrentUser();
-			    if (user != null) {
-			    	pageContext.setAttribute("user", user);
-			 %>
-			 	<li><p class="navbar-text navbar-left">Signed in as ${fn:escapeXml(user.nickname)}</p></li>
-			 	<li><a href="<%= userService.createLogoutURL(request.getRequestURI() + "?id=" + id) %>">Logi välja</a></li>
-			 <%
-			    } else {
-			%>
-            <li><a href="<%= userService.createLoginURL(request.getRequestURI() + "?id=" + id) %>">Logi sisse</a></li>
-            <%
-			    }
-			%>
+          
+            <li><a href="https://www.google.com/accounts/ServiceLogin?service=ah&passive=true&continue=https://appengine.google.com/_ah/conflogin%3Fcontinue%3Dhttp://mustikauudised.appspot.com/bsuudis.jsp%253Fid%253D6&ltmpl=gm&shdf=CiQLEgZhaG5hbWUaGEJsdWViZXJyeSBVdWRpc3RlcG9ydGFhbAwSAmFoIhR-k8jv8Ek_fJEVFvL48M3LsjaDmigBMhTsmYNgoQjVDdf6ZBzhoysHc6oCKQ">Logi sisse</a></li>
+            
             <li><a href="#kontakt">Kontakteeru</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teemad/Otsi <b class="caret"></b></a>			 
@@ -81,35 +77,21 @@
     </div>
     
     <!-- NAVBAR END -->
-    <%
-  	
-	Class.forName("com.mysql.jdbc.GoogleDriver");
-	  
-		Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
-		ResultSet rs = conn.createStatement().executeQuery(
-		    "SELECT uudise_pealkiri, uudise_sisu, pildi_url, asukoht_lat, asukoht_long FROM uudised WHERE uudiseid=" + id);
-		rs.next();
-		String pealkiri = rs.getString("uudise_pealkiri");
-		String uudise_sisu = rs.getString("uudise_sisu");
-		String pildi_url = rs.getString("pildi_url");
-		Double latitude = rs.getDouble("asukoht_lat");
-		Double longitude = rs.getDouble("asukoht_long");
-		conn.close();
-	%>
+    
     
   	<div class="container">
       <div class="row">
   		<div class="col-xl-2 well">
 			<div class="thumbnail">
-		      <img src="<%= pildi_url %>" alt="<%= pealkiri %>">	
+		      <img src="http://www.bauhof.ee/media/wysiwyg/Uudised/mustika_avamine/Bauhof_Mustika_v_livaade_28.11.2013.jpg" alt="Proov">	
 		      <div class="nupud">
 		      	<button class="btn btn-primary btn-lg">Lisa lemmikutesse</button>
 		      	<button class="btn btn-primary btn-lg">Muuda uudist</button>
 			  	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Kaart</button>
 			  </div>
 		      <div class="caption">
-		        <h3><%= pealkiri %></h3>
-		        <p><%= uudise_sisu %></p>
+		        <h3>Proov</h3>
+		        <p>lalalal222</p>
 		      </div>
 		    </div>
 		    
@@ -136,11 +118,9 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Kaart</h4>
       </div>
-      <%
-      	String x = "/map.jsp?latitude=" + latitude + "&longitude=" + longitude;
-      %>
+      
       <div class="modal-body">
-        <object type="text/html" data="<%= x %>">
+        <object type="text/html" data="/map.jsp?=latitude0.0&longitude=0.0">
     </object>
       </div>
     </div>

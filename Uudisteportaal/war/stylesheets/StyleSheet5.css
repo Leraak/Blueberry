@@ -2,7 +2,6 @@ body {
 	background-image:url("/taustamustrid/grey_wash_wall.png");
 	padding: 10%;
 	padding-top: 100px;
-	min-height: 4000px;
 }
 @media screen and (max-width: 750px){
     body {
