@@ -29,14 +29,14 @@
         		var marker;
         		var map;
         		var map_options = {
-          			center: new google.maps.LatLng(defaultLat, defaultLng),
+          			center: new google.maps.LatLng(<%= request.getParameter("latitude") %>, <%= request.getParameter("longitude") %>),
           			zoom: 6,
           			mapTypeId: google.maps.MapTypeId.ROADMAP
         			}
         		var map = new google.maps.Map(map_canvas, map_options)
         		marker = new google.maps.Marker({
         		    map:map,
-        		    draggable:true,
+        		    draggable:false,
         		    animation: google.maps.Animation.DROP,
         		    position: parliament
         		  });

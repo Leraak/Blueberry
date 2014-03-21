@@ -120,7 +120,7 @@
       </div>
       
       <div class="modal-body">
-        <object type="text/html" data="/map.jsp?=latitude0.0&longitude=0.0">
+        <object type="text/html" data="/map.jsp?latitude=0.0&longitude=0.0">
     </object>
       </div>
     </div>
