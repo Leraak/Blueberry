@@ -3,6 +3,10 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="com.google.appengine.api.utils.SystemProperty" %>
+<%@ page import="com.google.appengine.api.users.User" %>
+<%@ page import="com.google.appengine.api.users.UserService" %>
+<%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
+
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,6 +32,9 @@
 	Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
 	ResultSet rs = conn.createStatement().executeQuery(
 	    "SELECT uudiseid, uudise_pealkiri, uudise_sisu, pildi_url FROM uudised order by uudiseid desc");
+    UserService userService = UserServiceFactory.getUserService();
+    User user = userService.getCurrentUser();
+    ResultSet rs2 = conn.createStatement().executeQuery("SELECT * FROM lemmikud");
 %>
   
 	<jsp:include page="/header2.jsp"></jsp:include>
@@ -48,12 +55,30 @@
 		      <a href="/bsuudis.jsp?id=<%= id %>">
 		        <h3><%= pealkiri %></h3>
 		        </a>
-		        <p><a href="#" class="btn btn-primary" role="button">Lisa lemmikutesse</a> 
+		        <%
+			        if (user != null) {
+				    	String a = user.getNickname();
+				    	pageContext.setAttribute("user", user);
+				    	while(rs2.next()){
+				    		String kasutajanimi = rs2.getString("kasutajanimi");
+				    		int uudiseID = rs2.getInt("uudiseID");
+				    		if(kasutajanimi.equals(a) == true && (id == uudiseID) == false){
+				 %>
+					<form action="/lemmikutesse" method="post">
+						<input type="hidden" name="lemmikuID" value="<%= id %>" /> 
+			        	<button type="submit" class="btn btn-default">Lisa lemmikutesse</button>
+			        </form>
+		        <%
+				    		}//if
+				    	}//while
+				    	rs2.first();
+			        }//if
+		        %>
 		      </div>
 		    </div>
         </div><!-- /.col-sm-4 -->
 	<%
-	}
+	}//while
 	conn.close();
 	%>
 	</div>

@@ -41,14 +41,41 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
           <%
-          String id = request.getParameter("id");
+          	//db ühendus
+          	Class.forName("com.mysql.jdbc.GoogleDriver");
+  			Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
+  			ResultSet rs1 = conn.createStatement().executeQuery("select kasutajanimi, uudise_pealkiri, uudised.uudiseID from lemmikud join uudised where uudised.uudiseID=lemmikud.uudiseID");
+  			//parameeter uudise jaoks
+  			String id = request.getParameter("id");
+  			if(id == null){
+  				response.sendRedirect("bsproov3.jsp");
+  			}
+          		//autentimine
 			    UserService userService = UserServiceFactory.getUserService();
 			    User user = userService.getCurrentUser();
 			    if (user != null) {
+			    	String a = user.getNickname();
 			    	pageContext.setAttribute("user", user);
 			 %>
-			 	<li><p class="navbar-text navbar-left">Signed in as ${fn:escapeXml(user.nickname)}</p></li>
+			 	<li><p class="navbar-text navbar-left">Signed in as <%= a %></p></li>
 			 	<li><a href="<%= userService.createLogoutURL(request.getRequestURI() + "?id=" + id) %>">Logi välja</a></li>
+				<li class="dropdown">
+	              <a href="#l" class="dropdown-toggle" data-toggle="dropdown">Lemmikud <b class="caret"></b></a>    
+	              <ul class="dropdown-menu">
+	              <%
+						while(rs1.next()){
+							String kasutajanimi = rs1.getString("kasutajanimi");
+					  		String uudise_pealkiri = rs1.getString("uudise_pealkiri");
+					  		int uudiseID = rs1.getInt("uudiseID");
+							if(kasutajanimi.equals(a)){
+	              %>
+					<li><a href="/bsuudis.jsp?id=<%= uudiseID %>"><%= uudise_pealkiri %></a></li>
+					<%
+							}
+						}
+					%>
+		          </ul>
+		       </li>
 			 <%
 			    } else {
 			%>
@@ -82,10 +109,6 @@
     
     <!-- NAVBAR END -->
     <%
-  	
-	Class.forName("com.mysql.jdbc.GoogleDriver");
-	  
-		Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
 		ResultSet rs = conn.createStatement().executeQuery(
 		    "SELECT uudise_pealkiri, uudise_sisu, pildi_url, asukoht_lat, asukoht_long FROM uudised WHERE uudiseid=" + id);
 		rs.next();
@@ -103,9 +126,9 @@
 			<div class="thumbnail">
 		      <img src="<%= pildi_url %>" alt="<%= pealkiri %>">	
 		      <div class="nupud">
-		      	<button class="btn btn-primary btn-lg">Lisa lemmikutesse</button>
-		      	<button class="btn btn-primary btn-lg">Muuda uudist</button>
-			  	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Kaart</button>
+		      	<button class="btn btn-primary">Lisa lemmikutesse</button>
+		      	<button class="btn btn-primary">Muuda uudist</button>
+			  	<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Kaart</button>
 			  </div>
 		      <div class="caption">
 		        <h3><%= pealkiri %></h3>
