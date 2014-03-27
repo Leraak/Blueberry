@@ -35,3 +35,9 @@ body {
 .nupud {
 	padding: 15px;
 }
+.form-control-md{
+	padding: 10px;
+}
+textarea {
+	resize: none;
+}
