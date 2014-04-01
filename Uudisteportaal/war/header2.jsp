@@ -24,6 +24,8 @@
     	  
 	  		Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
 	  		ResultSet rs = conn.createStatement().executeQuery("select kasutajanimi, uudise_pealkiri, uudised.uudiseID from lemmikud join uudised where uudised.uudiseID=lemmikud.uudiseID");
+	  		//lemmikuudiste arv, group by lause
+  			ResultSet rs2 = conn.createStatement().executeQuery("select kasutajanimi, count(*) from lemmikud group by kasutajanimi");
 		    UserService userService = UserServiceFactory.getUserService();
 		    User user = userService.getCurrentUser();
 		    if (user != null) {
@@ -33,7 +35,17 @@
             <li><p class="navbar-text navbar-left">Signed in as <%= a %></p></li>
 			<li><a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">Logi välja</a></li>
 			<li class="dropdown">
-              <a href="#l" class="dropdown-toggle" data-toggle="dropdown">Lemmikud <b class="caret"></b></a>    
+              <%
+					int lemmikuid = 0;
+					while(rs2.next()){
+						String kasutajanimi = rs2.getString("kasutajanimi");
+						int count = rs2.getInt("count(*)");
+						if(kasutajanimi.equals(a)){
+							lemmikuid = count;
+						}
+					}//while
+				%>
+	          <a href="#l" class="dropdown-toggle" data-toggle="dropdown">Lemmikud (<%=lemmikuid%>) <b class="caret"></b></a>   
               <ul class="dropdown-menu">
               <%
 					while(rs.next()){

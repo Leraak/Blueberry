@@ -59,19 +59,32 @@
 			        if (user != null) {
 				    	String a = user.getNickname();
 				    	pageContext.setAttribute("user", user);
+				    	boolean lemmikUudis = false;
 				    	while(rs2.next()){
 				    		String kasutajanimi = rs2.getString("kasutajanimi");
 				    		int uudiseID = rs2.getInt("uudiseID");
-				    		if(kasutajanimi.equals(a) == true && (id == uudiseID) == false){
+				    		
+				    		if(kasutajanimi.equals(a) && id == uudiseID){ //kasutaja lemmikuudis
+				    			lemmikUudis = true;
 				 %>
+					<!-- LEMMIKUUDIS -->
 					<form action="/lemmikutesse" method="post">
-						<input type="hidden" name="lemmikuID" value="<%= id %>" /> 
-			        	<button type="submit" class="btn btn-default">Lisa lemmikutesse</button>
-			        </form>
-		        <%
+								<input type="hidden" name="lemmikuID" value="<%= id %>" /> 
+					        	<button type="submit" class="btn btn-default" disabled>Lisa lemmikutesse</button>
+					        </form>
+		        <%			rs2.first();
+		        			break;
 				    		}//if
 				    	}//while
+						if(lemmikUudis == false){
+							%>
+							<form action="/lemmikutesse" method="post">
+								<input type="hidden" name="lemmikuID" value="<%= id %>" /> 
+					        	<button type="submit" class="btn btn-default">Lisa lemmikutesse</button>
+					        </form>
+					    <%
 				    	rs2.first();
+			    		}
 			        }//if
 		        %>
 		      </div>
