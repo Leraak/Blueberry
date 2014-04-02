@@ -16,9 +16,9 @@
     <meta charset="UTF-8">
 
     <!-- Bootstrap -->
-    <link type="text/css" href="bsstyle/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="bsstyle/bootstrap_slate.min.css" rel="stylesheet">
     <link type="text/css" href="stylesheets/StyleSheet5.css" rel="stylesheet">
-    <link type="text/css" href="bsstyle/bootstrap-theme.min.css" rel="stylesheet">
+<!--     <link type="text/css" href="bsstyle/bootstrap-theme.min.css" rel="stylesheet"> -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,7 +38,7 @@
 
 
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -47,7 +47,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/bsproov3.jsp">Mustikauudised</a>
+          <a class="navbar-brand" href="/pealeht_edit.jsp">Mustikauudised</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -59,8 +59,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teemad/Otsi <b class="caret"></b></a>			 
               <ul class="dropdown-menu">
-   			 	<li><a href="#t1">Teema 1</a></li>
-            	<li><a href="#t2">Teema 2</a></li>
+   			 	<li><a id="taust1" href="#t1">Tume</a></li>
+            	<li><a id="taust2" href="#t2">Hele</a></li>
             	<li><a href="#t3">Teema 3</a></li>
             	<li><a href="#t6">Koerad</a></li>
     			<li class="divider"></li>
@@ -153,6 +153,24 @@
 	</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  	<script>
+  		document.title = "Proov";
+  		$( document ).ready(function() {
+  			$(".col-md-6").click(function() {
+		  		$(this).fadeOut( "slow");
+		  	});
+		  	$("#taust1").click(function() {
+		  		$("body").css('background-image','url(taustamustrid/asfalt.png)');
+		  		document.title = "Tume";
+		  	});
+		  	$("#taust2").click(function() {
+		  		$("body").css('background-image','url(taustamustrid/squared_metal.png)');
+		  		document.title = "Hele";
+		  	});
+		});
+  	</script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   </body>
