@@ -29,7 +29,7 @@
     <title>Bootstrap PROOV</title>
 
     <!-- Bootstrap -->
-    <link type="text/css" href="bsstyle/bootstrap_slate.min.css" rel="stylesheet">
+    <link type="text/css" href="bsstyle/bootstrap.min.css" rel="stylesheet">
     <link href="bsstyle/StyleSheet4.css" rel="stylesheet">
     <link href="stylesheets/StyleSheet5.css" rel="stylesheet">
   

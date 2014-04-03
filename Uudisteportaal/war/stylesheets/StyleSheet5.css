@@ -3,6 +3,25 @@ body {
 	padding: 10%;
 	padding-top: 100px;
 }
+
+.bscomment {
+	margin-bottom: 10px; 
+	padding-bottom: 5px; 
+	border-bottom: 1px solid #DFDFDF;
+}
+
+.bscomment span {
+	min-width: 100px;
+	font-weight: bold;
+}
+#new_comment_submit.loading {
+	text-indent: -999px;
+	border: none;
+	width: 32px;
+	height: 32px;
+	outline: none;
+	background: url('../img/ajax-loader.gif') no-repeat center center;
+}
 @media screen and (max-width: 750px){
     body {
         padding-top: 60px;

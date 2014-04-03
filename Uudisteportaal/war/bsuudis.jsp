@@ -14,6 +14,7 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="js/fancyBox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 	<script type="text/javascript" src="js/fancyBox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="js/bsuudis.js"></script>
 	<script type="text/javascript" src="js/fancybox_proov.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -130,7 +131,6 @@
 		String pildi_url = rs.getString("pildi_url");
 		Double latitude = rs.getDouble("asukoht_lat");
 		Double longitude = rs.getDouble("asukoht_long");
-		conn.close();
 	%>
     
   	<div class="container">
@@ -149,15 +149,61 @@
 		      </div>
 		    </div>
 		    
-  		</div>
+	</div>
   		<div class="col-xl-6 well">
   			<h3>Kommentaarid</h3>
-			<div class="alert alert-success"><h4>Kasutaja1</h4>Mulle maitsevad kommid.</div>	
-			<div class="alert alert-danger"><h4>Kasutaja2</h4>Mulle ei maitse kommid.</div>
-			<div class="alert alert-info"><h4>Kasutaja3</h4>Jobu oled.</div>
-			<div class="alert alert-warning"><h4>Kasutaja4</h4>EDGAR, PUTIN, jeeee</div>
-  		</div>
-  		
+
+<% 
+    String new_comment_name = request.getParameter("new_comment_name");
+    String new_comment_text = request.getParameter("new_comment_text");
+    if(new_comment_name != null && new_comment_text != null &&
+        new_comment_text.length() >= 1 && new_comment_name.length() >= 1) {
+        String updateStatement =
+                " INSERT INTO kommentaarid " +
+                " (kommenteerija, uudiseID, kommentaari_sisu) VALUES " +
+                " (?, ?, ?) ";
+        PreparedStatement pstmt = conn.prepareStatement(updateStatement);
+        pstmt.setString(1, new_comment_name);
+        pstmt.setInt(2, Integer.parseInt(id));
+        pstmt.setString(3, new_comment_text);
+        int success = pstmt.executeUpdate();
+    }
+%>
+
+
+    <div id="comments_holder">
+        <%
+            ResultSet kommentaarid = conn.createStatement().executeQuery(
+                "SELECT id, kommenteerija, kommentaari_sisu FROM kommentaarid WHERE uudiseID=" + id);
+            while(kommentaarid.next()) {
+
+                String kommentaari_id = kommentaarid.getString("id");
+                String kommenteerija = kommentaarid.getString("kommenteerija");
+                String kommentaar = kommentaarid.getString("kommentaari_sisu");
+                %>
+                    <div class="bscomment" id="bscomment-<%= kommentaari_id %>">
+                        <span><%= kommenteerija %>: </span>
+                        <%= kommentaar %>
+                    </div>
+                <%
+            }
+            conn.close();
+        %>
+    </div>
+
+          <form action="" method="POST" id="" role="form">
+                <legend>Lisa kommentaar</legend>
+                <div id="new_comment_error_box"></div>
+                <div class="form-group">
+                    <label for="">Nimi:</label>
+                    <input type="text" name="new_comment_name" id="new_comment_name" class="form-control" value="" required="required" title="" placeholder="Sisesta nimi...">
+                    <label for="">Sisu:</label>
+                    <textarea rows="5" name="new_comment_text" class="form-control" id="new_comment_text" required="required" placeholder="Lisa kommentaar..."></textarea>
+                    <input type="hidden" name="uudise_id" id="uudise_id" value="<%= id %>">
+                </div>
+                <button type="submit" id="new_comment_submit" class="btn btn-primary">Sisesta!</button>
+          </form>
+	</div>
 
     </div> <!-- /container -->
 	</div>

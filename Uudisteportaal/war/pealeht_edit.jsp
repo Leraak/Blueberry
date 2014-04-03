@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
 
     <!-- Bootstrap -->
-	<link type="text/css" href="bsstyle/bootstrap_slate.min.css" rel="stylesheet">
+	<link type="text/css" href="bsstyle/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="stylesheets/StyleSheet5.css" rel="stylesheet">
 <!--     <link type="text/css" href="bsstyle/bootstrap-theme.min.css" rel="stylesheet"> -->
 

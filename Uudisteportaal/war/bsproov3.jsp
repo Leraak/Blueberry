@@ -28,7 +28,7 @@
   <body>
   <%
   Class.forName("com.mysql.jdbc.GoogleDriver");
-  
+    
 	Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
 	ResultSet rs = conn.createStatement().executeQuery(
 	    "SELECT uudiseid, uudise_pealkiri, uudise_sisu, pildi_url FROM uudised order by uudiseid desc");

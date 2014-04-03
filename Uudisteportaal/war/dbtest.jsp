@@ -20,7 +20,7 @@ if (SystemProperty.environment.value() ==
 } else {
   // Local MySQL instance to use during development.
   Class.forName("com.mysql.jdbc.Driver");
-  url = "jdbc:mysql://173.194.84.247:3306/uudisteportaal";
+  url = "jdbc:mysql://173.194.84.247:3306/uudisteportaal?user=root&password=parool";
 }
 
 Connection conn = DriverManager.getConnection(url, "root", "parool");
