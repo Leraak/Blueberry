@@ -26,7 +26,8 @@ public class Uuskommentaar extends HttpServlet {
 		resp.setContentType("text/html; charset=UTF-8");
 
 		try {
-  			Connection conn = java.sql.DriverManager.getConnection("jdbc:mysql://173.194.84.247:3306/uudisteportaal?user=root&password=parool");	      
+			Class.forName("com.mysql.jdbc.GoogleDriver");
+  			Connection conn = java.sql.DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");	      
   			try {
   			
 	  			String new_comment_name = req.getParameter("new_comment_name");
@@ -54,6 +55,9 @@ public class Uuskommentaar extends HttpServlet {
 	
 		    } catch (SQLException e) {
 		      e.printStackTrace();
-		    }
+		    } catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 }

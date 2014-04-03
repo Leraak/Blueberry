@@ -1,61 +1,61 @@
+$(document).ready(function() {
+	$('#lisa').attr('disabled', true);
+});
+
 function kontrolliUudist() {
 	var veateade = "Viga: \n";
 	
-	var pealkiri = document.getElementById("#Pealkiri").value;
-	var sisu = document.getElementById("#Sisu").value;
-	var pildi_url = document.getElementById("#Pildi_url").value;
-	var tags = document.getElementById("#Tags").value;
-	var latitude = document.getElementById("#latitude").value;
-	var longitude = document.getElementById("#longitude").value;
+	var pealkiri = $("#Pealkiri").val();
+	var sisu = $("#Sisu").val();
+	var pildi_url = $("#Pildi_url").val();
 	
 	if(pealkiri==""){
 		veateade = veateade + "Pealkiri puudub \n"
-		$("#Pealkiri").addClass("has-error");
+		$('#lisa').attr('disabled', true);
 	}
+	
 	if(sisu==""){
 		veateade = veateade + "Sisu puudub \n"
-		$("#Sisu").addClass("has-error");
+		$('#lisa').attr('disabled', true);
 	}
-	if(pildi_url=""){
-		veateade = veateade + "Pildi aadress puudub \n"
-		$("#Pildi_url").addClass("has-error");
+
+	if(pildi_url==""){
+		veateade = veateade + "Pildi URL puudub \n";
+		$('#lisa').attr('disabled', true);
+		alert(veateade);
 	}
-	else{
+	else if(pildi_url!=""){
 		try{
 			//pildi suuruse kontroll
+			var lubatudLaius = 390;
+			var lubatudPikkus = 250;
 			var img = new Image();
-			var pikkus;
-			var laius;
-			img.onload = function() {
-				pikkus = this.height;
-				laius = this.width;
+			try{
+				img.onload = function() {
+					 	var pikkus = this.height,
+						laius = this.width;
+					 	//kui on liiga suur
+						if(laius > lubatudLaius || pikkus > lubatudPikkus){
+							veateade = veateade + "Pilt on liiga suur: \n" + "   Lubatud x= " + lubatudLaius + " (Praegu=" + laius + ")\n" 
+							+ "   Lubatud y= " + lubatudPikkus + " (Praegu=" + pikkus + ")\n";
+						}
+						
+						if(veateade!="Viga: \n"){
+							alert(veateade);
+							$('#lisa').attr('disabled', true);
+						}
+						else if (veateade=="Viga: \n"){
+							$('#lisa').attr('disabled', false);
+						}
+				}
+			}
+			catch(error){
+				veateade = veateade + "Error: " + error + "\n\n" + "Ilmselt pole tegemist pildiga.\n";
 			}
 			img.src = pildi_url;
-			//kui on liiga suur
-			if(laius > lubatudLaius || pikkus > lubatudPikkus){
-				veateade = veateade + "Pilt on liiga suur: \n" + "   Lubatud x= " + lubatudLaius + " (Praegu=" + laius + ")\n" 
-				+ "   Lubatud y= " + lubatudPikkus + " (Praegu=" + pikkus + ")\n";
-			}
 		} catch(error) {
 			veateade = veateade + "Error: " + error + "\n\n" + "Ilmselt pole tegemist pildiga.\n";
 		}
-		
-	}
-	if(latitude=""){
-		veateade = veateade + "latitude puudub \n"
-		$("#latitude").addClass("has-error");
-	}
-	if(longitude=""){
-		veateade = veateade + "longitude puudub"
-		$("#longitude").addClass("has-error");
 	}
 	
-	if(veateade!="Viga: \n"){
-		alert(veateade);
-	}
-	else{
-		$.post("lisaUudis", function(){
-			alert("Uudis lisatud");
-		});
-	}
 }

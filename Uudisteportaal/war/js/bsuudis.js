@@ -1,5 +1,9 @@
+var loendi;
+var uuenda;
+
 function getNewComments(){
 
+	console.log("Võtan uudist");
 	var last_id = $('.bscomment').last().attr('id').split('-')[1];
 	var uudise_id = $('#uudise_id').val();
 	
@@ -11,18 +15,28 @@ function getNewComments(){
 			'uudise_id': uudise_id
 		},
 		success: function(data){
+			console.log("Õnnestus");
 			$('#comments_holder').append(data);
 		}, complete: function(){
-			setTimeout(getNewComments, 10);
+			if(loendi==40){
+				alert("Chati sessioon aegus, lisa uus kommentaar kui tahad jätkata.");
+				clearTimeout(uuenda);
+			}
+			else{
+				uuenda=setTimeout(getNewComments, 4000);
+				console.log("Count: " + loendi);
+				loendi++;
+			}
 		}
 	});
 }
 
 $(document).ready(function(){
-
+	loendi = 0;
 	getNewComments();
 
 	$('#new_comment_submit').click(function(){
+		loendi = 0;
 		var new_comment_name = $('#new_comment_name').val();
 		var new_comment_text = $('#new_comment_text').val();
 		var uudise_id = $('#uudise_id').val();
@@ -39,6 +53,7 @@ $(document).ready(function(){
 				$('#new_comment_text').attr('disabled', true);
 				$('#new_comment_name').attr('disabled', true);
 			},success: function(data){
+				getNewComments();
 				if(data != 1) {
 					$('#new_comment_error_box').html('\
 						<div class="alert alert-info">\

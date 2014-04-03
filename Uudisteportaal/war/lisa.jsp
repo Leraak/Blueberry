@@ -70,7 +70,8 @@
 				</div>
 			  <div class="form-group">
 			    <div class="col-sm-10">
-			      <button type="submit" class="btn btn-default">Lisa uudis</button>
+			      <button class="btn btn-default" onclick="kontrolliUudist(); return false;" id="kontrolli">Kontrolli</button>
+			      <button type="submit" class="btn btn-default" id="lisa">Lisa uudis</button>
 			    </div>
 			  </div>
 			  </div>
@@ -84,9 +85,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/uudiseKontroll.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="js/map.js"></script>
-    <script type="text/javascript"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="js/popBox/popbox.min.js" type="text/javascript"></script>
   </body>
