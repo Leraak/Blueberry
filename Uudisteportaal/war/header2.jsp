@@ -68,8 +68,7 @@
             <%
 			    } conn.close();
 			%>
-            <li><a href="#registreeri">Registreeri</a></li>
-            <li><a href="#kontakt">Kontakteeru</a></li>
+            <li><a href="/bskontakt.jsp">Kontakteeru</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teemad/Otsi <b class="caret"></b></a>			 
               <ul class="dropdown-menu">

@@ -17,9 +17,18 @@ function getNewComments(){
 		success: function(data){
 			console.log("Õnnestus");
 			$('#comments_holder').append(data);
+			//scroll
+			$('#comments_holder').animate({
+		        scrollTop: $("#comments_holder").offset().top
+		    }, 2000, "linear");
 		}, complete: function(){
 			if(loendi==40){
-				alert("Chati sessioon aegus, lisa uus kommentaar kui tahad jätkata.");
+				$('#new_comment_error_box').html('\
+						<div class="alert alert-danger alert-dismissable">\
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>\
+						<strong>Hoiatus!</strong> Chati sessioon aegus, lisa uus kommentaar kui tahad jätkata.\
+						</div>\
+					')
 				clearTimeout(uuenda);
 			}
 			else{

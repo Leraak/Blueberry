@@ -1,16 +1,11 @@
 package server;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.io.*;
+import java.sql.*;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
+
+import com.google.appengine.api.utils.SystemProperty;
 
 public class UudiseLisamine extends HttpServlet {
 
@@ -32,15 +27,6 @@ public class UudiseLisamine extends HttpServlet {
 		try {
 	    	Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
 	      try {
-	    	  ResultSet rs = conn.createStatement().executeQuery("SELECT EXISTS(select * from uudised where uudise_pealkiri='" + req.getParameter("pealkiri") + "')");
-	    	  rs.next();
-	    	  if(Integer.parseInt(rs.getString("SELECT EXISTS(select * from uudised where uudise_pealkiri='" + req.getParameter("pealkiri") + "')")) > 0 ){
-	    		  out.println(
-	  	                "<html><head></head><body>Sellise pealkirjaga uudis on juba olemas! " +
-	  	                "Redirecting...</body></html>");
-	    		  resp.setHeader("Refresh", "1; url=/lisa.jsp");
-	    	  }
-	    	  else {
 	        String uudise_pealkiri = req.getParameter("pealkiri");
 	        String uudise_sisu = req.getParameter("sisu");
 	        String pildi_url = req.getParameter("pildi_url");
@@ -72,7 +58,6 @@ public class UudiseLisamine extends HttpServlet {
 	                "Redirecting...</body></html>");
 	          }
 	        }
-	    	  }
 	      } finally {
 	        conn.close();
 	      }

@@ -35,48 +35,7 @@
   
   
   <body>
-   <!-- NAVBAR -->
-  	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/bsproov3.jsp">Mustikauudised</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-          
-            <li><a href="https://www.google.com/accounts/ServiceLogin?service=ah&passive=true&continue=https://appengine.google.com/_ah/conflogin%3Fcontinue%3Dhttp://mustikauudised.appspot.com/bsuudis.jsp%253Fid%253D6&ltmpl=gm&shdf=CiQLEgZhaG5hbWUaGEJsdWViZXJyeSBVdWRpc3RlcG9ydGFhbAwSAmFoIhR-k8jv8Ek_fJEVFvL48M3LsjaDmigBMhTsmYNgoQjVDdf6ZBzhoysHc6oCKQ">Logi sisse</a></li>
-            
-            <li><a href="#kontakt">Kontakteeru</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teemad/Otsi <b class="caret"></b></a>			 
-              <ul class="dropdown-menu">
-   			 	<li><a href="#t1">Teema 1</a></li>
-            	<li><a href="#t2">Teema 2</a></li>
-            	<li><a href="#t3">Teema 3</a></li>
-            	<li><a href="#t6">Koerad</a></li>
-    			<li class="divider"></li>
-    			<li>
-            	  <form class="navbar-form navbar-left" role="search">
-       				<div class="form-group">
-         			 <input type="text" class="form-control" placeholder="Otsi">
-        			</div>
-        			<button type="submit" class="btn btn-default">OTSI</button>
-     		 	  </form>
-     		    </li>
-     		   </ul>
-     		</li>
-          </ul>
-          </div>
-      </div>
-    </div>
-    
-    <!-- NAVBAR END -->
+   <jsp:include page="/header2.jsp"></jsp:include>
     
     
   	<div class="container">
@@ -92,7 +51,7 @@
 					<option value="kiitus">Ütle midagi ilusat</option>
 				</select>
 		        <textarea name="kastike" class="form-control" rows="5"></textarea>
-		        <button class="btn btn-primary btn-sm">Saada tagasiside</button>
+		        <button class="btn btn-primary btn-sm" onclick="saada()">Saada tagasiside</button>
 		        <table class = "table"> 
 		        	<tr>
   						<th><h4>Tegijad:</h4></th>
@@ -133,6 +92,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    
+    <script type="text/javascript">
+    	saada(){
+    		alert("Saadetud!");
+    	}
+    </script>
   </body>
 </html>

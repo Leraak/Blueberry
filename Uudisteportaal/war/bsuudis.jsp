@@ -18,7 +18,7 @@
 	<script type="text/javascript" src="js/fancybox_proov.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap PROOV</title>
+    <title>Uudis</title>
 
     <!-- Bootstrap -->
     <link href="bsstyle/bootstrap.min.css" rel="stylesheet">
@@ -97,7 +97,7 @@
             <%
 			    }
 			%>
-            <li><a href="#kontakt">Kontakteeru</a></li>
+            <li><a href="/bskontakt.jsp">Kontakteeru</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teemad/Otsi <b class="caret"></b></a>			 
               <ul class="dropdown-menu">
@@ -135,7 +135,7 @@
     
   	<div class="container">
       <div class="row">
-  		<div class="col-xl-2 well">
+  		<div class="col-md-12 well">
 			<div class="thumbnail">
 		      <img src="<%= pildi_url %>" alt="<%= pealkiri %>">	
 		      <div class="nupud">
@@ -150,8 +150,8 @@
 		    </div>
 		    
 	</div>
-  		<div class="col-xl-6 well">
-  			<h3>Kommentaarid</h3>
+  		<div class="col-md-12 well">
+  			<h3 id="kommentaaridh3">Kommentaarid</h3>
 
 <% 
     String new_comment_name = request.getParameter("new_comment_name");
@@ -209,6 +209,7 @@
 	</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
