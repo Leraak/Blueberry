@@ -10,20 +10,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <link rel="stylesheet" href="js/fancyBox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-	<script type="text/javascript" src="js/fancyBox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-    <script type="text/javascript" src="js/bsuudis.js"></script>
-	<script type="text/javascript" src="js/fancybox_proov.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Uudis</title>
-
-    <!-- Bootstrap -->
-    <link href="bsstyle/bootstrap.min.css" rel="stylesheet">
-    <link href="bsstyle/StyleSheet4.css" rel="stylesheet">
-    <link href="stylesheets/StyleSheet5.css" rel="stylesheet">
   
   
   <body>
@@ -207,11 +196,7 @@
 
     </div> <!-- /container -->
 	</div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+	
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -231,3 +216,14 @@
 </div>
   </body>
 </html>
+<!-- Bootstrap -->
+    <link href="bsstyle/bootstrap.min.css" rel="stylesheet">
+  <link href="bsstyle/StyleSheet4.css" rel="stylesheet">
+    <link href="stylesheets/StyleSheet5.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/bsuudis.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
