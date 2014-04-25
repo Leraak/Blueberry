@@ -12,6 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mustikauudised</title>
     <meta charset="UTF-8">
+    
+    <link type="text/css" href="bsstyle/bootstrap.min.css" rel="stylesheet">
+  	<link type="text/css" href="stylesheets/StyleSheet5.css" rel="stylesheet">
+	<link type="text/css" href="bsstyle/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -90,14 +94,11 @@
 	conn.close();
 	%>
 	</div>
-  </body>
-</html>
 
 <!-- Bootstrap -->
-    <link type="text/css" href="bsstyle/bootstrap.min.css" rel="stylesheet">
-  <link type="text/css" href="stylesheets/StyleSheet5.css" rel="stylesheet">
-	<link type="text/css" href="bsstyle/bootstrap-theme.min.css" rel="stylesheet">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+   </body>
+</html>

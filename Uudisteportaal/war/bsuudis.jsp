@@ -13,6 +13,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Uudis</title>
+    
+        <link href="bsstyle/bootstrap.min.css" rel="stylesheet">
+  	<link href="bsstyle/StyleSheet4.css" rel="stylesheet">
+    <link href="stylesheets/StyleSheet5.css" rel="stylesheet">
   
   
   <body>
@@ -180,13 +184,13 @@
         %>
     </div>
 
-          <form action="" method="POST" id="" role="form">
-                <legend>Lisa kommentaar</legend>
+          <form action="" method="POST" role="form">
+               <h3 id="lisa_kommentaar_h3">Lisa kommentaar</h3>
                 <div id="new_comment_error_box"></div>
                 <div class="form-group">
-                    <label for="">Nimi:</label>
+                    <label for="new_comment_name">Nimi:</label>
                     <input type="text" name="new_comment_name" id="new_comment_name" class="form-control" value="" required="required" title="" placeholder="Sisesta nimi...">
-                    <label for="">Sisu:</label>
+                    <label for="new_comment_text">Sisu:</label>
                     <textarea rows="5" name="new_comment_text" class="form-control" id="new_comment_text" required="required" placeholder="Lisa kommentaar..."></textarea>
                     <input type="hidden" name="uudise_id" id="uudise_id" value="<%= id %>">
                 </div>
@@ -214,12 +218,7 @@
     </div>
   </div>
 </div>
-  </body>
-</html>
 <!-- Bootstrap -->
-    <link href="bsstyle/bootstrap.min.css" rel="stylesheet">
-  <link href="bsstyle/StyleSheet4.css" rel="stylesheet">
-    <link href="stylesheets/StyleSheet5.css" rel="stylesheet">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -227,3 +226,5 @@
     <script type="text/javascript" src="js/bsuudis.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
