@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 
 import com.google.appengine.api.utils.SystemProperty;
 
-public class LemmikuLisamine extends HttpServlet {
+public class LemmikuEemaldamine extends HttpServlet {
 
 	/**
 	 * 
@@ -33,10 +33,8 @@ public class LemmikuLisamine extends HttpServlet {
 	      try {
 	    	int id = Integer.parseInt(req.getParameter("lemmikuID"));
 	        //andmed andmebaasi
-	          String statement = "INSERT INTO lemmikud (kasutajanimi, uudiseID) VALUES( ? , ? )";
+	          String statement = "DELETE FROM lemmikud WHERE kasutajanimi =\""+ a + "\" AND uudiseID=" + id ;
 	          PreparedStatement ps = conn.prepareStatement(statement);
-	          ps.setString(1, a);
-	          ps.setInt(2, id);
 	          
 	          int success = 2;
 	          success = ps.executeUpdate();

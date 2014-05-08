@@ -43,7 +43,8 @@
   		<div class="col-xl-2 well">
 		      <div class="caption">
 		        <h2>Kontakteerumine</h2>
-		        <select class="form-control-md">
+		        <form action="/tagasiside" method="post">
+		        <select class="form-control-md" name="tyyp">
 			        <option selected disabled value="Vali tagasiside tüüp:">Vali tagasiside tüüp:</option>
 					<option value="report">Teata ebasobivast käitumisest</option>
 					<option value="bug">Teata veast veebilehe funktsionaalsuses</option>
@@ -51,7 +52,8 @@
 					<option value="kiitus">Ütle midagi ilusat</option>
 				</select>
 		        <textarea name="kastike" class="form-control" rows="5"></textarea>
-		        <button class="btn btn-primary btn-sm" onclick="saada()">Saada tagasiside</button>
+		        <button class="btn btn-primary btn-sm" type="submit">Saada tagasiside</button>
+		        </form>
 		        <table class = "table"> 
 		        	<tr>
   						<th><h4>Tegijad:</h4></th>

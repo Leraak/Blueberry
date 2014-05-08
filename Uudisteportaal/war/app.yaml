@@ -1,8 +1,0 @@
-application: mustikauudised
-version: 1
-runtime: java
-
-- url: /manifest/(.*\.appcache)
-  static_files: manifest/\1
-  mime_type: text/cache-manifest
-  upload: manifest/(.*\.appcache)

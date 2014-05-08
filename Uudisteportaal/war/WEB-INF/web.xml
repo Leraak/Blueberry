@@ -12,6 +12,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
         <servlet-name>sign</servlet-name>
         <url-pattern>/sign</url-pattern>
     </servlet-mapping>
+    
     <servlet>
     	<servlet-name>lisaUudis</servlet-name>
     	<servlet-class>server.UudiseLisamine</servlet-class>
@@ -20,6 +21,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     	<servlet-name>lisaUudis</servlet-name>
     	<url-pattern>/lisaUudis</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>lemmikutesse</servlet-name>
         <servlet-class>server.LemmikuLisamine</servlet-class>
@@ -27,6 +29,33 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     <servlet-mapping>
         <servlet-name>lemmikutesse</servlet-name>
         <url-pattern>/lemmikutesse</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>otsing</servlet-name>
+        <servlet-class>server.Otsing</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>otsing</servlet-name>
+        <url-pattern>/otsing</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>tagasiside</servlet-name>
+        <servlet-class>server.Tagasiside</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tagasiside</servlet-name>
+        <url-pattern>/tagasiside</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>lemmikutest</servlet-name>
+        <servlet-class>server.LemmikuEemaldamine</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>lemmikutest</servlet-name>
+        <url-pattern>/lemmikutest</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>uuskommentaar</servlet-name>

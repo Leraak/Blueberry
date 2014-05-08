@@ -29,8 +29,9 @@
   Class.forName("com.mysql.jdbc.GoogleDriver");
   
 	Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
+	String otsing = request.getParameter("s");
 	ResultSet rs = conn.createStatement().executeQuery(
-	    "SELECT uudiseid, uudise_pealkiri, uudise_sisu, pildi_url FROM uudised order by uudiseid desc");
+	    "SELECT DISTINCT * FROM (SELECT * FROM uudised WHERE uudise_pealkiri LIKE \"%" + otsing + "%\" UNION ALL SELECT * FROM uudised WHERE uudise_sisu LIKE \"%" + otsing + "%\") AS T order by uudiseid desc");
     UserService userService = UserServiceFactory.getUserService();
     User user = userService.getCurrentUser();
     ResultSet rs2 = conn.createStatement().executeQuery("SELECT * FROM lemmikud");
@@ -100,12 +101,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script>
-    		$("#otsingu_nupp").onclick(function() {
-	    		var o = $("#otsing").val();
-	    		alert(o);
-    			window.location.replace("http://mustikauudised.appspot.com/otsing.jsp?s=" + $("#otsing").val());
-    		})
-    </script>
    </body>
 </html>

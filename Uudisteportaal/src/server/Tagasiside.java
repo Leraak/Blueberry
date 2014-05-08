@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 
 import com.google.appengine.api.utils.SystemProperty;
 
-public class LemmikuLisamine extends HttpServlet {
+public class Tagasiside extends HttpServlet {
 
 	/**
 	 * 
@@ -26,22 +26,22 @@ public class LemmikuLisamine extends HttpServlet {
 		
 		PrintWriter out = resp.getWriter();
 		try {
-			UserService userService = UserServiceFactory.getUserService();
-		    User user = userService.getCurrentUser();
-		    String a = user.getNickname();
 	    	Connection conn = DriverManager.getConnection("jdbc:google:mysql://mustikauudised:blueberrysql/uudisteportaal?user=root");
 	      try {
-	    	int id = Integer.parseInt(req.getParameter("lemmikuID"));
+	    	String tyyp = req.getParameter("tyyp");
+	    	String sisu = req.getParameter("kastike");
 	        //andmed andmebaasi
-	          String statement = "INSERT INTO lemmikud (kasutajanimi, uudiseID) VALUES( ? , ? )";
+	          String statement = "INSERT INTO tagasiside (tagasiside_tyyp, sisu) VALUES( ? , ? )";
 	          PreparedStatement ps = conn.prepareStatement(statement);
-	          ps.setString(1, a);
-	          ps.setInt(2, id);
+	          ps.setString(1, tyyp);
+	          ps.setString(2, sisu);
 	          
 	          int success = 2;
 	          success = ps.executeUpdate();
 	          if (success == 1) {
-	            	resp.sendRedirect("bsproov3.jsp");
+	  			out.println(
+	  		              "<html><head></head><body>Tagasiside edastatud! " +
+	  		              "Redirecting ...</body></html>");
 	          } else if (success == 0) {
 	          }
 	      } finally {
@@ -50,6 +50,6 @@ public class LemmikuLisamine extends HttpServlet {
 	    } catch (SQLException e) {
 	      e.printStackTrace();
 	    }
-		resp.sendRedirect("bsproov3.jsp");
+			resp.setHeader("Refresh", "2; url=/bskontakt.jsp");
 	}
 }

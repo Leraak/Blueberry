@@ -20,8 +20,8 @@
         <script type="text/javascript">
         var myMarkerIsDraggable = true;
 		var myCoordsLenght = 6;
-		var defaultLat = 37.973787;
-		var defaultLng = 23.722426;
+		var defaultLat = <%= request.getParameter("latitude") %>;
+		var defaultLng = <%= request.getParameter("longitude") %>;
 		
 		function initialize() {
         		var map_canvas = document.getElementById('map_canvas');
@@ -29,7 +29,7 @@
         		var marker;
         		var map;
         		var map_options = {
-          			center: new google.maps.LatLng(<%= request.getParameter("latitude") %>, <%= request.getParameter("longitude") %>),
+          			center: new google.maps.LatLng(defaultLat, defaultLng),
           			zoom: 6,
           			mapTypeId: google.maps.MapTypeId.ROADMAP
         			}
@@ -62,8 +62,6 @@
         </script>
         <script type="text/javascript"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-        <script src="js/popBox/popbox.min.js" type="text/javascript"></script>
-        <link href="js/popBox/popbox.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
 		<div id="map_canvas"></div>

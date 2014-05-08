@@ -54,7 +54,7 @@
 			    	String a = user.getNickname();
 			    	pageContext.setAttribute("user", user);
 			 %>
-			 	<li><p class="navbar-text navbar-left">Signed in as <%= a %></p></li>
+			 	<li><p class="navbar-text navbar-left">Tere, <%= a %>!</p></li>
 			 	<li><a href="<%= userService.createLogoutURL(request.getRequestURI() + "?id=" + id) %>">Logi välja</a></li>
 				<li class="dropdown">
 				<%
@@ -92,17 +92,12 @@
 			%>
             <li><a href="/bskontakt.jsp">Kontakteeru</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teemad/Otsi <b class="caret"></b></a>			 
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Otsing <b class="caret"></b></a>			 
               <ul class="dropdown-menu">
-   			 	<li><a href="#t1">Teema 1</a></li>
-            	<li><a href="#t2">Teema 2</a></li>
-            	<li><a href="#t3">Teema 3</a></li>
-            	<li><a href="#t6">Koerad</a></li>
-    			<li class="divider"></li>
     			<li>
-            	  <form class="navbar-form navbar-left" role="search">
+            	  <form class="navbar-form navbar-left" action='/otsing' method="post">
        				<div class="form-group">
-         			 <input type="text" class="form-control" placeholder="Otsi">
+         			 <input type="text" id="otsing" name="otsingu_sisu" class="form-control" placeholder="Otsi">
         			</div>
         			<button type="submit" class="btn btn-default">OTSI</button>
      		 	  </form>
@@ -132,12 +127,10 @@
 			<div class="thumbnail">
 		      <img src="<%= pildi_url %>" alt="<%= pealkiri %>">	
 		      <div class="nupud">
-		      	<button class="btn btn-primary">Lisa lemmikutesse</button>
-		      	<button class="btn btn-primary">Muuda uudist</button>
 			  	<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Kaart</button>
 			  </div>
 		      <div class="caption">
-		        <h3><%= pealkiri %></h3>
+		        <h3><strong><%= pealkiri %></strong></h3>
 		        <p><%= uudise_sisu %></p>
 		      </div>
 		    </div>

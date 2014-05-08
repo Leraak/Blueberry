@@ -12,7 +12,6 @@
     <link href="bsstyle/bootstrap-theme.min.css" rel="stylesheet">
   </head>
   <body>
-	<jsp:include page="/header2.jsp"></jsp:include>
 	 	<div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
