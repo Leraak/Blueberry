@@ -80,10 +80,12 @@
         			<button type="submit" class="btn btn-default">OTSI</button>
      		 	  </form>
      		    </li>
+     		    <li><a href="/otsingu_map.jsp">Kaardi otsing!!</a></li>
      		   </ul>
      		</li>
           </ul>
           </div>
       </div>
     </div>
+   
     
